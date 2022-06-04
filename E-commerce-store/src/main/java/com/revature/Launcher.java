@@ -2,6 +2,8 @@ package com.revature;
 
 public class Launcher {
 
-	System.out.println("Test Text");
+	public static void main(String[] args) {
+		System.out.println("test text");
+	}
 
 }
