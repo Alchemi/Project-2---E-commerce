@@ -12,14 +12,14 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class User {
 	
-	@Id
+	@Id//ads id as primary key for user table
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
 	private int id;
 	@Column(unique = true, nullable = false)
-	private String username;
+	private String username;//username colomn must be unique and not null
 	@Column(nullable = false)
-	private String password;
+	private String password;// password must not be null
 	private String streetAddress;
 	private String city;
 	private String state;
@@ -30,7 +30,7 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 	public User(int id, String username, String password, String streetAddress, String city, String state,
-			String zipcode) {
+			String zipcode) {//all arg constructor
 		super();
 		this.id = id;
 		this.username = username;
@@ -40,7 +40,7 @@ public class User {
 		this.state = state;
 		this.zipcode = zipcode;
 	}
-	public User(String username, String password) {
+	public User(String username, String password) {//constructor for login
 		super();
 		this.username = username;
 		this.password = password;

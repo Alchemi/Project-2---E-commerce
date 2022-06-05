@@ -6,6 +6,7 @@ import com.revature.repositories.UserDAO;
 public class AuthService {
 	UserDAO ud = new UserDAO();
 	
+	//User enters username and password, user is grabbed by username if password matches password in database successful login
 	public User login(String username, String password) {
 		User user;
 		
@@ -31,7 +32,7 @@ public class AuthService {
 		}
 		return null;
 	}
-	
+	//Allow user to create acount if username does not already exist
 	public void register(User userToBeRegistered) {
 		if(ud.getUserByUsername(userToBeRegistered.getUsername()) != null) {
 			throw new NullPointerException("Username is already taken");
