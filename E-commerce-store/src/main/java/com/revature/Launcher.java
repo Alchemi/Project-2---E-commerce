@@ -6,7 +6,4 @@ public class Launcher {
 		System.out.println("test text");
 		System.out.println("branch test");
 	}
-
-	
-
 }
