@@ -1,8 +1,10 @@
 package com.revature.services;
 
+import org.springframework.stereotype.Service;
+
 import com.revature.models.User;
 import com.revature.repositories.UserDAO;
-
+@Service
 public class AuthService {
 UserDAO ud = new UserDAO();
 	
