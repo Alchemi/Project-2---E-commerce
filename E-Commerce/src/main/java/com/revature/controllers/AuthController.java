@@ -24,20 +24,23 @@ public class AuthController {
 
 	private AuthService as;
 	
+	
 	@Autowired
 	public AuthController(AuthService service) {
 		this.as = service;
 	}
 	
+	
 	@PostMapping
 	public ResponseEntity<User> register(@RequestBody User user){
+		System.out.println(user.getPassword());
 		
-		as.register(user);
 		if(user.getUsername() == null) {
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(user);
+			
+			return ResponseEntity.status(HttpStatus.CREATED).body(user);
 		}else {
 			
-			
+			as.register(user);
 			return ResponseEntity.status(HttpStatus.CREATED).body(user);
 		}
 	}
