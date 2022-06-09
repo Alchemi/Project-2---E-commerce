@@ -1,7 +1,7 @@
 package com.revature.services;
 
-import com.revature.models.User;
-import com.revature.repositories.UserDAO;
+import com.revature.models.User;	
+import com.revature.DAO.UserDAO;
 
 public class UserService {
 UserDAO ud = new UserDAO();
