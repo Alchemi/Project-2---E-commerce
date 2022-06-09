@@ -1,12 +1,18 @@
 package com.revature.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.DAO.UserDAO;
 import com.revature.models.User;
 @Service
 public class AuthService {
-UserDAO ud = new UserDAO();
+
+	private UserDAO ud;
+	@Autowired
+	public AuthService(UserDAO userDAO) {
+		this.ud = userDAO;
+	}
 	
 	//User enters username and password, user is grabbed by username if password matches password in database successful login
 	public User login(String username, String password) {
@@ -40,7 +46,8 @@ UserDAO ud = new UserDAO();
 			throw new NullPointerException("Username is already taken");
 		}
 		ud.createUser(userToBeRegistered);
-		System.out.println("User successfully registered");
+		System.out.println(userToBeRegistered.getPassword());
+		//System.out.println("User successfully registered");
 		
 	}
 

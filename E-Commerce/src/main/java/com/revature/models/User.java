@@ -8,22 +8,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.revature.models.User;
-
+@Component
+@Scope("prototype")
 @Entity
 @Table(name ="user")
-@Component
 public class User {
 	@Id//ads id as primary key for user table
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
 	private int id;
-	
 	@Column(nullable = false, unique=true)
 	private String username;//username colomn must be unique and not null
-	
 	@Column(nullable = false)
 	private String password;
 	// password must not be null

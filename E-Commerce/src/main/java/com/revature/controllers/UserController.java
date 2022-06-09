@@ -34,6 +34,8 @@ public class UserController {
 	}
 	@GetMapping("/{id}")
 	public ResponseEntity<User> getUserById(@PathVariable("id") int id){
+		System.out.println(id);
+		
 		User u = us.getUserById(id);
 		if(u == null) {
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(u);

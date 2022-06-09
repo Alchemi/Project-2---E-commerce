@@ -2,6 +2,7 @@ package com.revature.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.DAO.UserDAO;
@@ -9,7 +10,11 @@ import com.revature.models.User;
 
 @Service
 public class UserService {
-UserDAO ud = new UserDAO();
+private UserDAO ud;
+	@Autowired
+	public UserService(UserDAO uDAO) {
+		this.ud= uDAO;
+	}
 	
 	public User getUserByUsername(String username) {
 		return ud.getUserByUsername(username);
