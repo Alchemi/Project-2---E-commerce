@@ -1,7 +1,12 @@
 package com.revature.services;
+<<<<<<< HEAD
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+=======
+import com.revature.DAO.UserDAO;
+import com.revature.models.User;
+>>>>>>> 42e1d4fb24d3bf17740b254bc5e523c5a2d36518
 
 import com.revature.DAO.UserDAO;
 import com.revature.models.User;
