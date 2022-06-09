@@ -2,7 +2,7 @@ package com.revature.DAO;
 
 import java.util.List;
 
-<<<<<<< HEAD
+
 import javax.persistence.Query;
 
 import org.hibernate.Session;
@@ -19,40 +19,17 @@ public class UserDAO {
 	public UserDAO(User user){
 		this.u = user;
 	}
-	
-	
-	public void createUser(User user) {
-		try {
-		Session ses = HibernateUtil.getSession();
-		u = new User(user.getUsername(), user.getPassword());
-		System.out.println(u.getUsername());
-		System.out.println(u.getPassword());
-		u.setId(2);
-		HibernateUtil.getSession().save(user);
-		ses.flush();
-		HibernateUtil.closeSession();
-		}catch(Exception e){
-			System.out.println("User failed to add");
-			e.printStackTrace();
-		}
 			
-=======
-import org.hibernate.Session;
-
-import com.revature.models.User;
-import com.revature.utilities.HibernateUtil;
-
-public class UserDAO {
 	public void createUser(User user) {
 		Session ses = HibernateUtil.getSession();
 		ses.save(user);
 		HibernateUtil.closeSession();
->>>>>>> 42e1d4fb24d3bf17740b254bc5e523c5a2d36518
+
 	}
 	//gets user by username used for login authentication
 	public User getUserByUsername(String username) {
 		Session ses = HibernateUtil.getSession();
-<<<<<<< HEAD
+
 		Query q = ses.createQuery("FROM User use WHERE user.username = ?1");
 		q.setParameter(1, username);
 		try {
@@ -66,24 +43,14 @@ public class UserDAO {
 		}
 	}
 		
-	//gets user by id
-	public User getUserById(int id) {
-		Session ses = HibernateUtil.getSession();
-		 u = ses.get(User.class, id);
-		HibernateUtil.closeSession();
-		return u;
-=======
-		User user = ses.get(User.class, username);
-		HibernateUtil.closeSession();
-		return user;
-	}
+	
 	//gets user by id
 	public User getUserById(int id) {
 		Session ses = HibernateUtil.getSession();
 		User user = ses.get(User.class, id);
 		HibernateUtil.closeSession();
 		return user;
->>>>>>> 42e1d4fb24d3bf17740b254bc5e523c5a2d36518
+
 	}
 	//returns a list of all users
 	public List<User> getAllUsers(){
