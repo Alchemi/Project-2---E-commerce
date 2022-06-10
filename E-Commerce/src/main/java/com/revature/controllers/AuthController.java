@@ -37,7 +37,7 @@ public class AuthController {
 		
 		if(user.getUsername() == null) {
 			
-			return ResponseEntity.status(HttpStatus.CREATED).body(user);
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(user);
 		}else {
 			
 			as.register(user);
