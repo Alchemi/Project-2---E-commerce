@@ -49,7 +49,7 @@ public class UserDAO {
 	//gets user by username used for login authentication
 	public User getUserByUsername(String username) {
 		Session ses = HibernateUtil.getSession();
-		Query q = ses.createQuery("FROM User use WHERE user.username = ?1");
+		Query q = ses.createQuery("FROM User WHERE username = ?1");
 		q.setParameter(1, username);
 		try {
 		List<User> userList = q.getResultList();
@@ -69,7 +69,6 @@ public class UserDAO {
 	public User getUserById(int id) {
 		Session ses = HibernateUtil.getSession();
 		User u = ses.get(User.class, id);
-		System.out.println(u.toString());
 		HibernateUtil.closeSession();
 		return u;
 

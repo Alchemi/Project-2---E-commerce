@@ -19,7 +19,7 @@ public class User {
 	@Id//ads id as primary key for user table
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	private Long userid;
+	private int userid;
 	@Column(nullable = false, unique=true)
 	private String username;//username colomn must be unique and not null
 	@Column(nullable = false)
@@ -33,7 +33,7 @@ public class User {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public User(Long id, String username, String password) {//all arg constructor
+	public User(int id, String username, String password) {//all arg constructor
 		super();
 		this.userid = id;
 		this.username = username;
@@ -65,10 +65,10 @@ public class User {
 	
 	
 	
-	public Long getUserid() {
+	public int getUserid() {
 		return userid;
 	}
-	public void setUserid(Long userid) {
+	public void setUserid(int userid) {
 		this.userid = userid;
 	}
 	@Override
@@ -80,7 +80,7 @@ public class User {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + ((userid == null) ? 0 : userid.hashCode());
+		result = prime * result + userid;
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
@@ -98,10 +98,7 @@ public class User {
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
-		if (userid == null) {
-			if (other.userid != null)
-				return false;
-		} else if (!userid.equals(other.userid))
+		if (userid != other.userid)
 			return false;
 		if (username == null) {
 			if (other.username != null)

@@ -34,15 +34,15 @@ public class UserController {
 		return us.getAllUsers();
 		//this one works
 	}
-	@RequestMapping("/id")
-	public ResponseEntity<User> getUserById(@RequestParam("id") int id){
+	@GetMapping("/{id}")
+	public ResponseEntity<User> getUserById(@PathVariable("id") int id){
 		System.out.println(id);
 		u = us.getUserById(id);
 		if(u == null) {
 			
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(u);
 		}else {
-			System.out.println(u.toString());
+			
 			return ResponseEntity.ok(u);
 		}
 	}
