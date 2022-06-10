@@ -25,7 +25,7 @@ public class UserDAO {
 //	}
 	
 			
-	public int createUser(User user) {
+	public int register(User user) {
 //		String pass = user.getPassword();
 //		System.out.println(pass);
 		try(Session session = HibernateUtil.getSession()) {
