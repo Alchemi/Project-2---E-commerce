@@ -1,11 +1,13 @@
 package com.revature.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.ResponseEntity.BodyBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -44,4 +46,15 @@ public class AuthController {
 			return ResponseEntity.status(HttpStatus.CREATED).body(user);
 		}
 	}
+	@GetMapping("/login")
+	public ResponseEntity<User> login(@RequestBody User user){
+		if(user.getUsername()==null) {
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(user);
+		}else{
+			as.login(user.getUsername(), user.getPassword());
+			return ResponseEntity.ok(user);
+		}
+		
+	}
+	
 }
