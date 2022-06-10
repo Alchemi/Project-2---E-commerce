@@ -50,7 +50,7 @@ public class AuthService {
 //		if(ud.getUserByUsername(userToBeRegistered.getUsername()) != null) {
 //			throw new NullPointerException("Username is already taken");
 //		}
-		ud.createUser(userToBeRegistered);
+		ud.register(userToBeRegistered);
 		System.out.println(userToBeRegistered.getPassword());
 		System.out.println("User successfully registered");
 		
