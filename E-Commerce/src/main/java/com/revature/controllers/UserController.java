@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.revature.models.User;
@@ -21,6 +22,7 @@ import com.revature.services.UserService;
 @RequestMapping(value="/user")
 @CrossOrigin
 public class UserController {
+	User u = new User();
 	private UserService us;
 	
 	@Autowired
@@ -32,14 +34,15 @@ public class UserController {
 		return us.getAllUsers();
 		//this one works
 	}
-	@GetMapping("/{id}")
-	public ResponseEntity<User> getUserById(@PathVariable("id") int id){
+	@RequestMapping("/id")
+	public ResponseEntity<User> getUserById(@RequestParam("id") int id){
 		System.out.println(id);
-		
-		User u = us.getUserById(id);
+		u = us.getUserById(id);
 		if(u == null) {
+			
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(u);
 		}else {
+			System.out.println(u.toString());
 			return ResponseEntity.ok(u);
 		}
 	}

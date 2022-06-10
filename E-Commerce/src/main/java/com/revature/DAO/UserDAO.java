@@ -1,10 +1,13 @@
 package com.revature.DAO;
 
+import java.util.ArrayList;
+
 import java.util.List;
 
 
 import javax.persistence.Query;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -13,23 +16,39 @@ import com.revature.models.User;
 import com.revature.utilities.HibernateUtil;
 @Repository
 public class UserDAO {
-	private User u;
 	
-	@Autowired
-	public UserDAO(User user){
-		this.u = user;
-	}
+//	private User u;
+//	@Autowired
+//	public UserDAO(User user) {
+//		this.u = user;
+//		
+//	}
+	
 			
-	public void createUser(User user) {
-		Session ses = HibernateUtil.getSession();
-		ses.save(user);
-		HibernateUtil.closeSession();
+	public int createUser(User user) {
+//		String pass = user.getPassword();
+//		System.out.println(pass);
+		try(Session session = HibernateUtil.getSession()) {
+//			Query q = session.createQuery("INSERT INTO User (username, password)"+"SELECT(username,password) FROM User");
+//			q.setParameter(0, user.getUsername());
+//			q.setParameter(1,user.getPassword());
+//			q.executeUpdate();
+			System.out.println(user.getUsername());
+			session.save(user);
+			System.out.println(user.getUsername());
+
+			HibernateUtil.closeSession();
+			return 1;
+		} catch(HibernateException e) {
+			System.out.println("There was an error inserting the User");
+			e.printStackTrace();
+			return 0;
+		}//look into insert
 
 	}
 	//gets user by username used for login authentication
 	public User getUserByUsername(String username) {
 		Session ses = HibernateUtil.getSession();
-
 		Query q = ses.createQuery("FROM User use WHERE user.username = ?1");
 		q.setParameter(1, username);
 		try {
@@ -41,15 +60,18 @@ public class UserDAO {
 		} catch(Exception e) {
 			return null;
 		}
+		
+		
 	}
 		
 	
 	//gets user by id
 	public User getUserById(int id) {
 		Session ses = HibernateUtil.getSession();
-		User user = ses.get(User.class, id);
+		User u = ses.get(User.class, id);
+		System.out.println(u.toString());
 		HibernateUtil.closeSession();
-		return user;
+		return u;
 
 	}
 	//returns a list of all users
