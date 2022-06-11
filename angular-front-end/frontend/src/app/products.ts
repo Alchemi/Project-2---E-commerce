@@ -1,5 +1,5 @@
 export interface Product{
-    SKU: number;
+    Id: number;
     name: string;
     price: number;
     description: string;
@@ -7,13 +7,13 @@ export interface Product{
 
 export const products = [
     {
-        SKU: 1,
+        Id: 1,
         name: 'Anime fig. test',
         price: 100,
         description: 'best on the market. worth the price'
     },
     {
-        SKU: 2,
+        Id: 2,
         name: 'Anime fig test2',
         price:200,
         description: 'worth every penny'
