@@ -19,5 +19,5 @@ export const products = [
         description: 'worth every penny'
     },
 
-    //find out if this needs to be "zipped up"
+    //find out if this needs to be "zipped up" - sparkey thoughts
 ]

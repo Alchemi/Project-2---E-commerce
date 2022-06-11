@@ -10,8 +10,21 @@ export class ProductListComponent {
     products = products;
 
     share() {
-        window.alert('The product has been shared!');
+        window.alert('This product has been shared!');
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// product alerts. how and would we like to do that?? things dont go here, this is just my thinks
 
 
