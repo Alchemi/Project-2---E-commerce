@@ -47,12 +47,12 @@ public class AuthService {
 	}
 	//Allow user to create acount if username does not already exist
 	public void register(User userToBeRegistered) {
-		if(ud.getUserByUsername(userToBeRegistered.getUsername()) != null) {
-			throw new NullPointerException("Username is already taken");
-		}
-		ud.createUser(userToBeRegistered);
+//		if(ud.getUserByUsername(userToBeRegistered.getUsername()) != null) {
+//			throw new NullPointerException("Username is already taken");
+//		}
+		ud.register(userToBeRegistered);
 		System.out.println(userToBeRegistered.getPassword());
-		//System.out.println("User successfully registered");
+		System.out.println("User successfully registered");
 		
 	}
 

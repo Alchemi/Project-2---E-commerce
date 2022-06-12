@@ -1,6 +1,6 @@
 package com.revature.models;
 
-public enum role {
+public enum Role {
 
 	customer, manager
 	//Extra roles: Supplier
