@@ -1,11 +1,15 @@
 package com.revature.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.context.annotation.Scope;
@@ -30,6 +34,11 @@ public class User {
 	private String contactnumber;
 	@Column(name="role")
 	private Role role;
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name="id")
+	private Address address;//havent tested but should work
+	@OneToOne
+	private Cart cart;//havent tested may need to remove later
 	
 	
 	
@@ -70,6 +79,20 @@ public class User {
 		this.lastname = lastname;
 		this.contactnumber = contactnumber;
 		this.role = role;
+	}
+	
+	public User(int userid, String username, String password, String firstname, String lastname, String contactnumber,
+			Role role, Address address, Cart cart) {
+		super();
+		this.userid = userid;
+		this.username = username;
+		this.password = password;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.contactnumber = contactnumber;
+		this.role = role;
+		this.address = address;
+		this.cart = cart;
 	}
 	public String getFirstname() {
 		return firstname;
@@ -112,6 +135,18 @@ public class User {
 	
 	
 	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 	public int getUserid() {
 		return userid;
 	}
@@ -121,12 +156,15 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [userid=" + userid + ", username=" + username + ", password=" + password + ", firstname="
-				+ firstname + ", lastname=" + lastname + ", contactnumber=" + contactnumber + ", role=" + role + "]";
+				+ firstname + ", lastname=" + lastname + ", contactnumber=" + contactnumber + ", role=" + role
+				+ ", address=" + address + ", cart=" + cart + "]";
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
+		result = prime * result + ((cart == null) ? 0 : cart.hashCode());
 		result = prime * result + ((contactnumber == null) ? 0 : contactnumber.hashCode());
 		result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
 		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
@@ -145,6 +183,16 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
+			return false;
+		if (cart == null) {
+			if (other.cart != null)
+				return false;
+		} else if (!cart.equals(other.cart))
+			return false;
 		if (contactnumber == null) {
 			if (other.contactnumber != null)
 				return false;

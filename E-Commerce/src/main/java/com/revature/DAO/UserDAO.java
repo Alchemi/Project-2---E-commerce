@@ -12,6 +12,7 @@ import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.revature.models.Role;
 import com.revature.models.User;
 import com.revature.utilities.HibernateUtil;
 @Repository
@@ -33,9 +34,10 @@ public class UserDAO {
 //			q.setParameter(0, user.getUsername());
 //			q.setParameter(1,user.getPassword());
 //			q.executeUpdate();
-			System.out.println(user.getUsername());
+			//System.out.println(user.getUsername());
+			user.setRole(Role.customer);
 			session.save(user);
-			System.out.println(user.getUsername());
+			//System.out.println(user.getUsername());
 
 			HibernateUtil.closeSession();
 			return 1;
@@ -55,6 +57,7 @@ public class UserDAO {
 		List<User> userList = q.getResultList();
 		HibernateUtil.closeSession();
 		User user = userList.get(0);
+		
 		System.out.println("user exists");
 		return user;
 		} catch(Exception e) {
