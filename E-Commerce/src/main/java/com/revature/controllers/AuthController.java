@@ -51,8 +51,12 @@ public class AuthController {
 		if(user.getUsername()==null) {
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(user);
 		}else{
-			as.login(user.getUsername(), user.getPassword());
+			if(as.login(user.getUsername(), user.getPassword())!=null) {
+				user = as.login(user.getUsername(), user.getPassword());
 			return ResponseEntity.ok(user);
+			}else {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(user);
+			}
 		}
 		
 	}
