@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS order_detail CASCADE;
 DROP TABLE IF EXISTS order_item CASCADE;
 
 create type Role as ENUM ('customer', 'manager');
+create type ProductType as ENUM ('figurine', 'manga', 'anime'); 
 
 CREATE TABLE category (
 	id INT GENERATED ALWAYS AS IDENTITY,
@@ -32,7 +33,7 @@ CREATE TABLE myuser (
 
 CREATE TABLE product (
 	id INT GENERATED ALWAYS AS IDENTITY,
-	code VARCHAR(20),
+	ProductType,
 	name VARCHAR(50),
 	brand VARCHAR(50),
 	description VARCHAR(255),
@@ -136,8 +137,8 @@ INSERT INTO user_detail
 VALUES ('Griffen', 'MacLeod', 'Customer', true, 'password', 'guffin@gmail.com', '123344561');
 
 -- adding products
-INSERT INTO product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
-VALUES ('PRDABC123DEFX', 'Big pp Zoro figure', 'One Piece', 'This is one big PP energy collectible', 1000, 5, true, 3, 4, 0, 0 );
+INSERT INTO product (type, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
+VALUES (figurine, 'Big pp Zoro figure', 'One Piece', 'This is one big PP energy collectible', 1000, 5, true, 3, 4, 0, 0 );
 
 -- adding a supplier correspondece address
 INSERT INTO address( user_id, address_line_one, address_line_two, city, state, country, postal_code, is_billing, is_shipping) 
