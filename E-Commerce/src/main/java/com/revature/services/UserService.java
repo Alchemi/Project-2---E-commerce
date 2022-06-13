@@ -31,4 +31,7 @@ private UserDAO ud;
 	public List<User> getAllUsers(){
 		return ud.getAllUsers();
 	}
+	public void update(User user) {
+		ud.update(user);
+	}
 }

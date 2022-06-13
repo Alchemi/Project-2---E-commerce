@@ -7,7 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import com.revature.models.Product;
+@Component
+@Scope("prototype")
 @Entity
 @Table(name="product")
 public class Product {
@@ -16,9 +21,10 @@ public class Product {
 	@Column(name = "product_id")
 	int id;
 	@Column(name = "product_name", nullable = false)
-	String productName;
+	String productname;
+	String description;
 	@Column(name = "product_type")
-	String productType;
+	private ProductType producttype;
 	double price;
 	
 	public Product() {
@@ -26,36 +32,56 @@ public class Product {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(int id, String productName, String productType, double price) {
-		super();
-		this.id = id;
-		this.productName = productName;
-		this.productType = productType;
-		this.price = price;
-	}
-
-	public Product(String productName, String productType, double price) {
-		super();
-		this.productName = productName;
-		this.productType = productType;
-		this.price = price;
-	}
+	
 
 	public String getProductName() {
-		return productName;
+		return productname;
 	}
 
 	public void setProductName(String productName) {
-		this.productName = productName;
+		this.productname = productName;
 	}
 
-	public String getProductType() {
-		return productType;
+	
+
+	public Product(int id, String productName, ProductType productType, double price) {
+		super();
+		this.id = id;
+		this.productname = productName;
+		this.producttype = productType;
+		this.price = price;
+	}
+	
+
+
+	public Product(int id, String productName, String description, ProductType productType, double price) {
+		super();
+		this.id = id;
+		this.productname = productName;
+		this.description = description;
+		this.producttype = productType;
+		this.price = price;
 	}
 
-	public void setProductType(String productType) {
-		this.productType = productType;
+
+
+	public ProductType getProductType() {
+		return producttype;
 	}
+
+
+
+	public void setProductType(ProductType productType) {
+		this.producttype = productType;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 
 	public double getPrice() {
 		return price;
@@ -68,17 +94,30 @@ public class Product {
 	public int getId() {
 		return id;
 	}
+	
+	public String getDescription() {
+		return description;
+	}
+
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + id;
 		long temp;
 		temp = Double.doubleToLongBits(price);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((productName == null) ? 0 : productName.hashCode());
-		result = prime * result + ((productType == null) ? 0 : productType.hashCode());
+		result = prime * result + ((productname == null) ? 0 : productname.hashCode());
+		result = prime * result + ((producttype == null) ? 0 : producttype.hashCode());
 		return result;
 	}
 
@@ -91,26 +130,28 @@ public class Product {
 		if (getClass() != obj.getClass())
 			return false;
 		Product other = (Product) obj;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
 		if (id != other.id)
 			return false;
 		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
 			return false;
-		if (productName == null) {
-			if (other.productName != null)
+		if (productname == null) {
+			if (other.productname != null)
 				return false;
-		} else if (!productName.equals(other.productName))
+		} else if (!productname.equals(other.productname))
 			return false;
-		if (productType == null) {
-			if (other.productType != null)
-				return false;
-		} else if (!productType.equals(other.productType))
+		if (producttype != other.producttype)
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", productName=" + productName + ", productType=" + productType + ", price="
-				+ price + "]";
+		return "Product [id=" + id + ", productName=" + productname + ", description=" + description + ", productType="
+				+ producttype + ", price=" + price + "]";
 	}
 }

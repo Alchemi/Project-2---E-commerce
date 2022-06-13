@@ -1,5 +1,8 @@
 package com.revature.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 
@@ -16,7 +19,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.revature.models.User;
-//@Component
+@Component
+@Scope("prototype")
 @Entity
 @Table(name ="myuser")
 public class User {
@@ -34,11 +38,13 @@ public class User {
 	private String contactnumber;
 	@Column(name="role")
 	private Role role;
+	@Column(name="usercart")
+	private ArrayList<Product> cart = new ArrayList<>();
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name="id")
 	private Address address;//havent tested but should work
-	@OneToOne
-	private Cart cart;//havent tested may need to remove later
+	
+	
 	
 	
 	
@@ -81,8 +87,12 @@ public class User {
 		this.role = role;
 	}
 	
+	
+	
+	
+	
 	public User(int userid, String username, String password, String firstname, String lastname, String contactnumber,
-			Role role, Address address, Cart cart) {
+			Role role, ArrayList<Product> cart, Address address) {
 		super();
 		this.userid = userid;
 		this.username = username;
@@ -91,8 +101,8 @@ public class User {
 		this.lastname = lastname;
 		this.contactnumber = contactnumber;
 		this.role = role;
-		this.address = address;
 		this.cart = cart;
+		this.address = address;
 	}
 	public String getFirstname() {
 		return firstname;
@@ -135,18 +145,21 @@ public class User {
 	
 	
 	
+	
+	
+	public ArrayList<Product> getCart() {
+		return cart;
+	}
+	public void setCart(ArrayList<Product> cart) {
+		this.cart = cart;
+	}
 	public Address getAddress() {
 		return address;
 	}
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-	public Cart getCart() {
-		return cart;
-	}
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}
+	
 	public int getUserid() {
 		return userid;
 	}
@@ -157,7 +170,7 @@ public class User {
 	public String toString() {
 		return "User [userid=" + userid + ", username=" + username + ", password=" + password + ", firstname="
 				+ firstname + ", lastname=" + lastname + ", contactnumber=" + contactnumber + ", role=" + role
-				+ ", address=" + address + ", cart=" + cart + "]";
+				+ ", cart=" + cart + ", address=" + address + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -224,5 +237,6 @@ public class User {
 			return false;
 		return true;
 	}
+	
 	
 }

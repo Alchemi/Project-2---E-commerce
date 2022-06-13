@@ -9,8 +9,12 @@ import javax.persistence.Query;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.revature.models.Role;
 import com.revature.models.User;
@@ -18,12 +22,12 @@ import com.revature.utilities.HibernateUtil;
 @Repository
 public class UserDAO {
 	
-//	private User u;
-//	@Autowired
-//	public UserDAO(User user) {
-//		this.u = user;
-//		
-//	}
+	private User u;
+	@Autowired
+	public UserDAO(User user) {
+		this.u = user;
+		
+	}
 	
 			
 	public int register(User user) {
@@ -56,10 +60,10 @@ public class UserDAO {
 		try {
 		List<User> userList = q.getResultList();
 		HibernateUtil.closeSession();
-		User user = userList.get(0);
+		u = userList.get(0);
 		
 		System.out.println("user exists");
-		return user;
+		return u;
 		} catch(Exception e) {
 			return null;
 		}
@@ -71,7 +75,7 @@ public class UserDAO {
 	//gets user by id
 	public User getUserById(int id) {
 		Session ses = HibernateUtil.getSession();
-		User u = ses.get(User.class, id);
+		u = ses.get(User.class, id);
 		HibernateUtil.closeSession();
 		return u;
 
@@ -83,5 +87,14 @@ public class UserDAO {
 		HibernateUtil.closeSession();
 		return userList;
 
+	}
+	
+	public void update(User user) {
+		Session ses = HibernateUtil.getSession(); //opens the session
+		Transaction tran = ses.beginTransaction(); //ALL and I do mean ALL update and delete methods MUST happen within a transaction
+		ses.merge(user); //this will actually merge our movie object with the database 
+		tran.commit(); //This will commit the transaction if it did not encounter a problem
+		HibernateUtil.closeSession(); //closes the session
+		System.out.println("User updated");
 	}
 }
