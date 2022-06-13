@@ -29,7 +29,7 @@
         <mapping class="com.revature.models.User"/>
         <mapping class="com.revature.models.Product"/>
 		<mapping class="com.revature.models.Address"/>
-		<mapping class="com.revature.models.Cart"/>
+		
         
         
 
