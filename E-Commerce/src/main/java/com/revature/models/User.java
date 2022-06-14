@@ -26,7 +26,6 @@ import com.revature.models.User;
 public class User {
 	@Id//ads id as primary key for user table
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
 	private int userid;
 	@Column(nullable = false, unique=true)
 	private String username;//username colomn must be unique and not null also placeholder for email
@@ -38,8 +37,7 @@ public class User {
 	private String contactnumber;
 	@Column(name="role")
 	private Role role;
-	@Column(name="usercart")
-	private ArrayList<Product> cart = new ArrayList<>();
+	
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name="id")
 	private Address address;//havent tested but should work
@@ -91,19 +89,8 @@ public class User {
 	
 	
 	
-	public User(int userid, String username, String password, String firstname, String lastname, String contactnumber,
-			Role role, ArrayList<Product> cart, Address address) {
-		super();
-		this.userid = userid;
-		this.username = username;
-		this.password = password;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.contactnumber = contactnumber;
-		this.role = role;
-		this.cart = cart;
-		this.address = address;
-	}
+	
+	
 	public String getFirstname() {
 		return firstname;
 	}
@@ -147,12 +134,6 @@ public class User {
 	
 	
 	
-	public ArrayList<Product> getCart() {
-		return cart;
-	}
-	public void setCart(ArrayList<Product> cart) {
-		this.cart = cart;
-	}
 	public Address getAddress() {
 		return address;
 	}
@@ -170,14 +151,13 @@ public class User {
 	public String toString() {
 		return "User [userid=" + userid + ", username=" + username + ", password=" + password + ", firstname="
 				+ firstname + ", lastname=" + lastname + ", contactnumber=" + contactnumber + ", role=" + role
-				+ ", cart=" + cart + ", address=" + address + "]";
+				+ ", address=" + address + "]";
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((address == null) ? 0 : address.hashCode());
-		result = prime * result + ((cart == null) ? 0 : cart.hashCode());
 		result = prime * result + ((contactnumber == null) ? 0 : contactnumber.hashCode());
 		result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
 		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
@@ -200,11 +180,6 @@ public class User {
 			if (other.address != null)
 				return false;
 		} else if (!address.equals(other.address))
-			return false;
-		if (cart == null) {
-			if (other.cart != null)
-				return false;
-		} else if (!cart.equals(other.cart))
 			return false;
 		if (contactnumber == null) {
 			if (other.contactnumber != null)

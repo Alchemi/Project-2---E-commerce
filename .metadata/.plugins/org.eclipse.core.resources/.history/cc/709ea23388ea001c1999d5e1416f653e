@@ -1,0 +1,152 @@
+package com.revature.models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.revature.models.Product;
+@Entity
+@Table(name="product")
+public class Product {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "product_id")
+	int id;
+	@Column(name = "product_name", nullable = false)
+	String productname;
+	String description;
+	@Column(name = "product_type")
+	private ProductType productType;
+	double price;
+	
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
+
+	public String getProductName() {
+		return productname;
+	}
+
+	public void setProductName(String productName) {
+		this.productname = productName;
+	}
+
+	
+
+	public Product(int id, String productName, ProductType productType, double price) {
+		super();
+		this.id = id;
+		this.productname = productName;
+		this.productType = productType;
+		this.price = price;
+	}
+	
+
+
+	public Product(int id, String productName, String description, ProductType productType, double price) {
+		super();
+		this.id = id;
+		this.productname = productName;
+		this.description = description;
+		this.productType = productType;
+		this.price = price;
+	}
+
+
+
+	public ProductType getProductType() {
+		return productType;
+	}
+
+
+
+	public void setProductType(ProductType productType) {
+		this.productType = productType;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public int getId() {
+		return id;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + id;
+		long temp;
+		temp = Double.doubleToLongBits(price);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((productname == null) ? 0 : productname.hashCode());
+		result = prime * result + ((productType == null) ? 0 : productType.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (id != other.id)
+			return false;
+		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
+			return false;
+		if (productname == null) {
+			if (other.productname != null)
+				return false;
+		} else if (!productname.equals(other.productname))
+			return false;
+		if (productType != other.productType)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", productName=" + productname + ", description=" + description + ", productType="
+				+ productType + ", price=" + price + "]";
+	}
+}
