@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Data } from '@angular/router';
 
 
 @Component({
@@ -7,9 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Static Weeb';
   toggleDarkTheme(): void{
-    document.body.classList.toggle
-    ('dark -theme');
+    document.body.classList.toggle('dark-theme');
   }
+
+  dataset = [];
+
+  public searchText: Data['items'];
 }
