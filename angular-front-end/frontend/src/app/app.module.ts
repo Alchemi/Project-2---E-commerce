@@ -10,6 +10,8 @@ import { CartComponent } from './cart/cart.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ShippingComponent } from './shipping/shipping.component';
+import { FilterPipe } from './filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,17 @@ import { ShippingComponent } from './shipping/shipping.component';
     ProductDetailsComponent,
     ProductListComponent,
     CartComponent,
+
     ShippingComponent
+
+    FilterPipe
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
