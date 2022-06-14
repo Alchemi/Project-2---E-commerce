@@ -19,6 +19,10 @@ public class ProductDAO {
 		this.p = prod;
 	}
 	
+	public ProductDAO() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Product getProductByName(String name) {
 		Session ses = HibernateUtil.getSession();
 		Query q = ses.createQuery("FROM Product WHERE productname = ?1");
