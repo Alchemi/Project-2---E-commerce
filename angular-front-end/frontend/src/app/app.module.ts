@@ -20,10 +20,8 @@ import { FormsModule } from '@angular/forms';
     ProductDetailsComponent,
     ProductListComponent,
     CartComponent,
-
-    ShippingComponent
-
-    FilterPipe
+    ShippingComponent,
+    FilterPipe,
 
   ],
   imports: [
