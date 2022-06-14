@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.revature.controllers.AuthController;
 import com.revature.models.Role;
 import com.revature.models.User;
 import com.revature.utilities.HibernateUtil;
@@ -92,6 +93,9 @@ public class UserDAO {
 	public void update(User user) {
 		Session ses = HibernateUtil.getSession(); //opens the session
 		Transaction tran = ses.beginTransaction(); //ALL and I do mean ALL update and delete methods MUST happen within a transaction
+		System.out.println(user);
+//		Query q = ses.createQuery("UPDATE User SET cart = '"+user.getCart()+"' WHERE id = " + user.getUserid());
+//		q.executeUpdate();
 		ses.merge(user); //this will actually merge our movie object with the database 
 		tran.commit(); //This will commit the transaction if it did not encounter a problem
 		HibernateUtil.closeSession(); //closes the session
