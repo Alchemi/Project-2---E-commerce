@@ -1,7 +1,27 @@
 <h1>{{ title }}</h1>
 <app-top-bar></app-top-bar>
 
+<!-- Search form -->
+<form>
+  <div class="md-form">
+    <input type="search" [(ngModel)]="searchText" placeholder="Search text">
+  </div>
+  <ul *ngFor="let data of dataset | filter: searchText">
+    <li>{{data}}</li>
+  </ul>
+</form>
+
+<!-- Dark Theme Button -->
+<button (click)="toggleDarkTheme()">Dark Theme</button>
+
+<!-- Top Bar -->
+<div>
+  <app-top-bar></app-top-bar>
+</div>
+
+<!-- Products -->
 <div class="container">
   <router-outlet></router-outlet>
 </div>
+
 
