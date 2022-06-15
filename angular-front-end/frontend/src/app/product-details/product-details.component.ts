@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Product, products } from '../products';
+import { Product2, products2 } from '../products2';
+import {Product3, products3 } from '../products3';
 import { CartService } from '../cart.service';
 
 @Component({

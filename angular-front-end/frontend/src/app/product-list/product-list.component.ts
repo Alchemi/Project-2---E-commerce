@@ -11,7 +11,7 @@ import{ products3} from '../products3';
 export class ProductListComponent {
     products = products;
     products2 = products2;
-    products3= products3;
+    products3 = products3;
 
     share() {
         window.alert('This product has been shared!');
