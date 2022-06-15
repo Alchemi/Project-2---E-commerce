@@ -4,11 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
+
+
 import{ TopBarComponent } from './top-bar/top-bar.component';
 import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { AuthModule } from './auth/auth.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,17 +20,19 @@ import { ProductListComponent } from './product-list/product-list.component';
     TopBarComponent,
     ProductDetailsComponent,
     ProductListComponent,
-    CartComponent
+    CartComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    AuthModule,
+    SharedModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component:
     ProductDetailsComponent },
-    { path: 'cart', component: CartComponent },
+    { path: 'cart', component: CartComponent },  
     ])
   ],
   providers: [],
