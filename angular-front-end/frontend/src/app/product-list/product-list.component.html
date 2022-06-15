@@ -20,4 +20,46 @@
 
 <h2>Manga</h2>
 
+<div *ngFor="let product2 of products2">
+
+
+    <h3>
+        <a [title]="product2.name + ' details '"
+            [routerLink]="['/products2', product2.id]">
+        {{ product2.name }}
+    </a>
+
+    </h3>
+    <p *ngIf="product2.description">
+        Description: {{ product2.description }}
+    </p>
+
+    <button type="button" (click)="share()">
+        Share
+    </button>
+
+
+</div>
+
 <h2>Video</h2>
+
+<div *ngFor="let product3 of products3">
+
+
+    <h3>
+        <a [title]="product3.name + ' details '"
+            [routerLink]="['/products2', product3.Id]">
+        {{ product3.name }}
+    </a>
+
+    </h3>
+    <p *ngIf="product3.description">
+        Description: {{ product3.description }}
+    </p>
+
+    <button type="button" (click)="share()">
+        Share
+    </button>
+
+
+</div>

@@ -18,6 +18,23 @@ export const products = [
         price:200,
         description: 'worth every penny'
     },
+    {
+        Id: 3,
+        name: 'Anime fig test3',
+        price:200,
+        description: 'worth every penny'
+    },
+    {
+        Id: 4,
+        name: 'Anime fig test4',
+        price:200,
+        description: 'worth every penny'
+    },
+    {
+        Id: 5,
+        name: 'Anime fig test5',
+        price:200,
+        description: 'worth every penny'
+    },
 
-    //find out if this needs to be "zipped up" - sparkey thoughts
 ]
