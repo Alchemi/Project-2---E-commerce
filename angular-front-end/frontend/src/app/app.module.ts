@@ -13,7 +13,6 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     AppComponent,

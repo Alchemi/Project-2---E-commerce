@@ -1,9 +1,9 @@
-<h2>Figurienes</h2>
+<h2>Products</h2>
 
-<div *ngFor="let product of products">
+<div *ngFor="let product of Product">
 
     <h3>
-        <a [title]="product.name + ' details '"
+        <a [title]="product.type + ' details '"
             [routerLink]="['/products', product.Id]">
         {{ product.name }}
     </a>
@@ -19,50 +19,3 @@
     </button>
 </div>
 
-<h2>Manga</h2>
-
-<div *ngFor="let product2 of products2">
-
-
-    <h3>
-        <a [title]="product2.name + ' details '"
-            [routerLink]="['/products2', product2.id]">
-        {{ product2.name }}
-    </a>
-
-    </h3>
-    <p *ngIf="product2.description">
-        Description: {{ product2.description }}
-    </p>
-
-    <button type="button">addToCart</button>
-    <button type="button" (click)="share()">
-        Share
-    </button>
-
-
-</div>
-
-<h2>Video</h2>
-
-<div *ngFor="let product3 of products3">
-
-
-    <h3>
-        <a [title]="product3.name + ' details '"
-            [routerLink]="['/products2', product3.Id]">
-        {{ product3.name }}
-    </a>
-
-    </h3>
-    <p *ngIf="product3.description">
-        Description: {{ product3.description }}
-    </p>
-
-    <button type="button">addToCart</button>
-    <button type="button" (click)="share()">
-        Share
-    </button>
-
-
-</div>
