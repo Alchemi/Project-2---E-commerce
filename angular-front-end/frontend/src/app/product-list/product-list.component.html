@@ -1,9 +1,9 @@
-<h2>Figurines</h2>
+<h2>Products</h2>
 
-<div *ngFor="let product of products">
+<div *ngFor="let product of Product">
 
     <h3>
-        <a [title]="product.name + ' details '"
+        <a [title]="product.type + ' details '"
             [routerLink]="['/products', product.Id]">
         {{ product.name }}
     </a>
@@ -12,12 +12,10 @@
     <p *ngIf="product.description">
         Description: {{ product.description }}
     </p>
+    <button type="button">addToCart</button>
 
     <button type="button" (click)="share()">
         Share
     </button>
 </div>
 
-<h2>Manga</h2>
-
-<h2>Video</h2>

@@ -1,6 +1,6 @@
 package com.revature.models;
 
-public enum ProductType {
+public enum producttype {
 figurine,
 manga,
 anime
