@@ -8,11 +8,9 @@ import { Data } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   toggleDarkTheme(): void{
     document.body.classList.toggle('dark-theme');
   }
 
-  dataset = [];
-
-  public searchText: Data['items'];
 }
