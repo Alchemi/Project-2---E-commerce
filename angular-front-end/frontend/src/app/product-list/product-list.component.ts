@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { Product, products } from '../products';
+import { CartService } from '../cart.service';
 
 
 @Component({
@@ -7,16 +8,58 @@ import { Product, products } from '../products';
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
+    productList: any;
+    filterCategory: any; 
+    CartService: any;
 
-    Product = products;
+    ngOnInit(): void {
+        this.CartService.getProduct(type)
+       // this.api.getProduct()
+        .subscribe((res: any)=>{
+          this.productList = res;
+          this.filterCategory = res;
+          this.productList.forEach((a:any) => { 
+            if(a.type ==="figures" || a.type ==="manga"){
+              a.type = "videos"
+            }
+            });
+        });
+
+        //filter(type:string) {
+        //this.filterCategory = this.productList
+       // .filter((a:any)=>{
+       // if(a.type == type || type ==''){
+          //  return a;
+         // }
+       // })
+      //}
+        //  }
+        //}//
+    
+
+
+
+
+    //public productlist: any;
+    //constructor(private api: apiservice, private cartservice: cartservivce) {}
+    //ngoninit(): void {
+        //this.api.getproduct()
+        //.subscribe(res=>{
+            //this.productlist = res;
+            //this.productlist.foreach((a:any)=> {
+                //object.assign(a,{quantity:1, total:a.price});
+            //})
+        //})
+    //}
+   // b4---->  Product = products;
+   //addtocart(item : any){
+    //this.cartservice.addtocart(item); 
+
    
 
 
-    share() {
-        window.alert('This product has been shared!');
-    }
-}
+   
 
 
 
@@ -29,6 +72,19 @@ export class ProductListComponent {
 
 
 
+
+
+              function subscribe(arg0: (res: any) => void) {
+                  throw new Error('Function not implemented.');
+              }
+
+              function subscribe(arg0: (res: any) => void) {
+                  throw new Error('Function not implemented.');
+              }
+
+              function type(type: any, string: any) {
+                  throw new Error('Function not implemented.');
+              }
 // product alerts. how and would we like to do that?? things dont go here, this is just my thinks
 
 
