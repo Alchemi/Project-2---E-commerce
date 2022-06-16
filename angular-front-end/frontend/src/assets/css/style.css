@@ -1,3 +1,28 @@
+body.dark-theme {
+  --text-color: #eee;
+  --bkg-color: #252222;
+  --btn-txt-color: rgb(46, 43, 43);
+  --btn-bg-color: rgba(186, 126, 243, 0.856);
+  --a-color: #eee;
+  --h1-color: #eee;
+}
+
+body {
+  background: var(--bkg-color);
+}
+
+p {
+color: var(--text-color);
+}
+
+button {
+padding: 10px;
+border: none;
+border-radius: 2px;
+color: var(--btn-txt-color);
+background-color: var(--btn-bg-color);
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
@@ -36,7 +61,7 @@ ul, ol {
 .primary-btn {
   display: inline-block;
   padding: 12px 30px;
-  background-color: #D10024;
+  background-color: #e01515;
   border: none;
   border-radius: 40px;
   color: #FFF;
