@@ -13,6 +13,10 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './component/header/header.component';
+import { HomeComponent } from './home/home.component';
+import { FigurinesComponent } from './figurines/figurines.component';
+import { MangaComponent } from './manga/manga.component';
+import { VideoComponent } from './video/video.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,10 @@ import { HeaderComponent } from './component/header/header.component';
     ShippingComponent,
     FilterPipe,
     HeaderComponent,
+    HomeComponent,
+    FigurinesComponent,
+    MangaComponent,
+    VideoComponent,
 
 
   ],

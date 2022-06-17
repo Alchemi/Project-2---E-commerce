@@ -1,0 +1,13 @@
+.h2{
+ align-items: center;
+ display: flex;
+
+}
+
+.product{
+    align-items: center;
+    display: flex;
+    padding: 0;
+    width: 100%;
+    padding-top: .5em;
+}
