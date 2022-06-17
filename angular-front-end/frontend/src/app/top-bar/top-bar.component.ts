@@ -10,8 +10,8 @@ export class TopBarComponent implements OnInit {
     public totalItem : number = 0;
     constructor(private cartService : CartService) { }
     ngOnInit(): void {
-        this.cartService.getProducts()
-        .subscribe(res=>{
+        this.cartService.getProduct()
+        .subscribe((res: string | any[])=>{
             this.totalItem = res.length;
         })
     }

@@ -26,6 +26,16 @@ export class ProductListComponent implements OnInit {
             });
         });
 
+
+
+        function type(type: any) {
+            throw new Error('Function not implemented.');
+        }
+    }
+}
+       // function type(type: any) {
+         //   throw new Error('Function not implemented.');
+        //}
         //filter(type:string) {
         //this.filterCategory = this.productList
        // .filter((a:any)=>{
@@ -74,17 +84,17 @@ export class ProductListComponent implements OnInit {
 
 
 
-              function subscribe(arg0: (res: any) => void) {
-                  throw new Error('Function not implemented.');
-              }
+              //function subscribe(arg0: (res: any) => void) {
+                //  throw new Error('Function not implemented.');
+              //}
 
-              function subscribe(arg0: (res: any) => void) {
-                  throw new Error('Function not implemented.');
-              }
+              //function subscribe(arg0: (res: any) => void) {
+                //  throw new Error('Function not implemented.');
+             // }
 
-              function type(type: any, string: any) {
-                  throw new Error('Function not implemented.');
-              }
+              //function type(type: any, string: any) {
+                //  throw new Error('Function not implemented.');
+              //}
 // product alerts. how and would we like to do that?? things dont go here, this is just my thinks
 
 
