@@ -1,0 +1,70 @@
+package com.revature.DAO;
+
+import java.util.ArrayList;
+
+import java.util.List;
+
+
+import javax.persistence.Query;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.revature.models.User;
+import com.revature.utilities.HibernateUtil;
+@Repository
+public class UserDAO {
+	private User u;
+	
+	@Autowired
+	public UserDAO(User user){
+		this.u = user;
+	}
+			
+	public int createUser(User user) {
+		try {
+			Session session = HibernateUtil.getSession();
+			u = user;
+			System.out.println(u.getUsername());
+			session.save(u);
+			HibernateUtil.closeSession();
+			return 1;
+		} catch(HibernateException e) {
+			System.out.println("There was an error inserting the User");
+			e.printStackTrace();
+			return 0;
+		}
+
+	}
+	//gets user by username used for login authentication
+	public User getUserByUsername(String username) {
+		Session ses = HibernateUtil.getSession();
+		Transaction tran = ses.beginTransaction(); //ALL and I do mean ALL update and delete methods MUST happen within a transaction
+		Query q = ses.createQuery("From Moive SET title = '" + movie.getTitle() + "' WHERE id = " + movie.getMovie_id());
+		System.out.println("user exists");
+		return u;
+		
+		
+	}
+		
+	
+	//gets user by id
+	public User getUserById(int id) {
+		Session ses = HibernateUtil.getSession();
+		u = (User) ses.get(User.class, id);
+		System.out.println(u.toString());
+		HibernateUtil.closeSession();
+		return u;
+
+	}
+	//returns a list of all users
+	public List<User> getAllUsers(){
+		Session ses = HibernateUtil.getSession();
+		List<User> userList = ses.createQuery("FROM User").list();
+		HibernateUtil.closeSession();
+		return userList;
+
+	}
+}

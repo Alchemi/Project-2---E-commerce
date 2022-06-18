@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Data } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Static Weeb';
+  
+  toggleDarkTheme(): void{
+    document.body.classList.toggle('dark-theme');
+  }
+
 }

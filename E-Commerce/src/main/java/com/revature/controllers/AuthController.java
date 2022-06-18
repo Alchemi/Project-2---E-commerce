@@ -25,7 +25,7 @@ import com.revature.services.AuthService;
 public class AuthController {
 
 	private AuthService as;
-	
+	public static User u;
 	
 	@Autowired
 	public AuthController(AuthService service) {
@@ -53,6 +53,7 @@ public class AuthController {
 		}else{
 			if(as.login(user.getUsername(), user.getPassword())!=null) {
 				user = as.login(user.getUsername(), user.getPassword());
+				u = user;
 			return ResponseEntity.ok(user);
 			}else {
 				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(user);
@@ -60,5 +61,6 @@ public class AuthController {
 		}
 		
 	}
+	
 	
 }

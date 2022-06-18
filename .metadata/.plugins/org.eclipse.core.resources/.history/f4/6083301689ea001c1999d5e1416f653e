@@ -1,0 +1,33 @@
+package com.revature.DAO;
+
+import java.util.List;
+
+import javax.persistence.Query;
+
+import org.hibernate.Session;
+
+import com.revature.models.Product;
+import com.revature.models.User;
+import com.revature.utilities.HibernateUtil;
+
+public class ProductDAO {
+	
+	public Product getUserByUsername(String name) {
+		Session ses = HibernateUtil.getSession();
+		Query q = ses.createQuery("FROM Product WHERE productname = ?1");
+		q.setParameter(1, name);
+		try {
+		List<Product> userList = q.getResultList();
+		HibernateUtil.closeSession();
+		Product product = userList.get(0);
+		
+		System.out.println("product exists");
+		return product;
+		} catch(Exception e) {
+			return null;
+		}
+		
+		
+	}
+
+}

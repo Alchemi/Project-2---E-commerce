@@ -1,12 +1,27 @@
-<app-column-one></app-column-one>
+<div>
+  <app-header>
+      
+  </app-header>
+  </div>
 
+
+<!---<h1>{{ "store" }}</h1>
+<app-top-bar></app-top-bar>       LEAVE THIS JUST INCASE--->
+
+
+
+<!-- Dark Theme Button moved to topbar component -->
+
+<!-- Top Bar -->
+<div>
+  <app-top-bar>
+
+  </app-top-bar>
+</div>
+
+<!-- Products -->
 <div class="container">
-<div style="text-align:center">
-<h1>
-    Welcome to ANIME SQL
-</h1>
+  <router-outlet></router-outlet>
 </div>
-<H2> Here are some links to help you start: </H2>
- <router-outlet></router-outlet>
-</div>
+
 
