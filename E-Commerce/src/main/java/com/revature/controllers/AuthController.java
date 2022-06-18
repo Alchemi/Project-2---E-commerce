@@ -46,17 +46,17 @@ public class AuthController {
 			return ResponseEntity.status(HttpStatus.CREATED).body(user);
 		}
 	}
-	@GetMapping("/login")
-	public ResponseEntity<User> login(@RequestBody User user){
+	@PostMapping("/login")
+	public ResponseEntity<String> login(@RequestBody User user){
 		if(user.getUsername()==null) {
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(user);
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body("0");
 		}else{
 			if(as.login(user.getUsername(), user.getPassword())!=null) {
 				user = as.login(user.getUsername(), user.getPassword());
 				u = user;
-			return ResponseEntity.ok(user);
+			return ResponseEntity.ok("1");
 			}else {
-				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(user);
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("0");
 			}
 		}
 		

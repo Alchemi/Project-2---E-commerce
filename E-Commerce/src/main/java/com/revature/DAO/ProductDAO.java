@@ -2,8 +2,10 @@ package com.revature.DAO;
 
 import java.util.List;
 
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -22,6 +24,18 @@ public class ProductDAO {
 	public ProductDAO() {
 		// TODO Auto-generated constructor stub
 	}
+	@PersistenceContext
+	public static void addProduct(Product product) {
+		try(Session ses = HibernateUtil.getSession()){
+			ses.save(product);
+			HibernateUtil.closeSession();
+		} catch(HibernateException e) {
+			System.out.println(e);
+			e.printStackTrace();
+		}
+		
+	}
+
 
 	public Product getProductByName(String name) {
 		Session ses = HibernateUtil.getSession();
@@ -54,5 +68,7 @@ public class ProductDAO {
 		return productList;
 
 	}
+	
 
+	
 }

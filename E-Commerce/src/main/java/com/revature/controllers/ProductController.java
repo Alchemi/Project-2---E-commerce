@@ -1,5 +1,6 @@
 package com.revature.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -65,4 +68,18 @@ public class ProductController {
 			}
 		}
 	}
+	
+    @PostMapping("/addproduct")
+    public static ResponseEntity<Product> addProduct(@RequestBody Product product){
+    	System.out.println(product.getId());
+    	
+    	if(product.getProductName() == null) {
+    		return ResponseEntity.status(HttpStatus.NO_CONTENT).body(product);
+    	} else {
+    		ProductService.addProduct(product);
+    		return ResponseEntity.status(HttpStatus.NO_CONTENT).body(product);
+    	}
+    }
+
 }
+

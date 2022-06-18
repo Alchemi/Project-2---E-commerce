@@ -18,14 +18,15 @@ import com.revature.models.Product;
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "product_id")
+	@Column(name = "id")
 	int id;
 	@Column(name = "product_name", nullable = false)
 	String productname;
 	String description;
 	@Column(name = "product_type")
-	private ProductType producttype;
+	private producttype producttype;
 	double price;
+	public int quantity;
 	
 	public Product() {
 		super();
@@ -44,7 +45,7 @@ public class Product {
 
 	
 
-	public Product(int id, String productName, ProductType productType, double price) {
+	public Product(int id, String productName, producttype productType, double price) {
 		super();
 		this.id = id;
 		this.productname = productName;
@@ -54,7 +55,7 @@ public class Product {
 	
 
 
-	public Product(int id, String productName, String description, ProductType productType, double price) {
+	public Product(int id, String productName, String description, producttype productType, double price) {
 		super();
 		this.id = id;
 		this.productname = productName;
@@ -65,13 +66,13 @@ public class Product {
 
 
 
-	public ProductType getProductType() {
+	public producttype getProductType() {
 		return producttype;
 	}
 
 
 
-	public void setProductType(ProductType productType) {
+	public void setProductType(producttype productType) {
 		this.producttype = productType;
 	}
 
@@ -105,7 +106,12 @@ public class Product {
 		this.description = description;
 	}
 
-
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 
 	@Override
 	public int hashCode() {
@@ -152,6 +158,6 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", productName=" + productname + ", description=" + description + ", productType="
-				+ producttype + ", price=" + price + "]";
+				+ producttype + ", price=" + price + " quantity=" + quantity + "]";
 	}
 }

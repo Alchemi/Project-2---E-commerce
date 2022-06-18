@@ -25,4 +25,7 @@ public class ProductService {
 	public List<Product> getAllProducts(){
 		return pd.getAllProducts();
 	}
+	public static void addProduct(Product product) {
+		ProductDAO.addProduct(product);
+	}
 }

@@ -1,6 +1,11 @@
+
 import { Component, OnInit, } from '@angular/core';
 import { Product, products } from '../products';
 import { CartService } from '../cart.service';
+=======
+import { Component } from '@angular/core';
+import { Product, products } from '../models/products';
+
 
 
 @Component({
