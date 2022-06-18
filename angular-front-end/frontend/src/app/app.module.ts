@@ -15,6 +15,9 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './component/header/header.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +26,13 @@ import { HeaderComponent } from './component/header/header.component';
     ProductDetailsComponent,
     ProductListComponent,
     CartComponent,
-
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
     ShippingComponent,
     FilterPipe,
     HeaderComponent,
+    
 
 
   ],
@@ -36,13 +42,14 @@ import { HeaderComponent } from './component/header/header.component';
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
-    AuthModule,
-    SharedModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
+      { path: '', component: HomeComponent },
+      { path:'products', component: ProductListComponent},
       { path: 'products/:productId', component:
       
     ProductDetailsComponent },
+    { path: 'login', component:LoginComponent},
+    { path:'register', component:RegisterComponent},
     { path: 'cart', component: CartComponent },
     { path: 'shipping', component: ShippingComponent},
     ])
