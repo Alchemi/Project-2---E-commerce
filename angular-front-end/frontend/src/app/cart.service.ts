@@ -6,6 +6,12 @@ import { Product } from './models/products';
     providedIn: 'root'
 })
 export class CartService {
+    getProduct() {
+        throw new Error("Method not implemented.");
+    }
+    getTotalPrice(): number {
+        throw new Error("Method not implemented.");
+    }
     items: Product[] = [];
     constructor(
         private http: HttpClient
