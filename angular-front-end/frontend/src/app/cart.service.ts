@@ -1,11 +1,17 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { Product } from './products';
+import { Product } from './models/products';
 
 @Injectable({
     providedIn: 'root'
 })
 export class CartService {
+    getProduct() {
+        throw new Error("Method not implemented.");
+    }
+    getTotalPrice(): number {
+        throw new Error("Method not implemented.");
+    }
     items: Product[] = [];
     constructor(
         private http: HttpClient

@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { CartService } from "../cart.service";
+import { Product } from "../service/product.service";
 
 
 @Component({
@@ -8,7 +9,17 @@ import { CartService } from "../cart.service";
     templateUrl: './cart.component.html',
     styleUrls: ['./cart.component.css']
 })
-export class CartComponent {
+export class CartComponent implements OnInit{
+    public product : any = [];
+    public grandTotal !: number;
+    constructor(private cartService : CartService) { }
+        
+    ngOnInit(): any {
+        
+    }
+    }
+
+/*export class CartComponent {
 
     items = this.cartService.getItems();
 
@@ -30,4 +41,4 @@ export class CartComponent {
         
     }
 
-}
+} */
