@@ -34,16 +34,16 @@ public class AuthController {
 	
 	
 	@PostMapping
-	public ResponseEntity<User> register(@RequestBody User user){
+	public ResponseEntity<String> register(@RequestBody User user){
 		System.out.println(user.getPassword());
 		
 		if(user.getUsername() == null) {
 			
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(user);
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body("0");
 		}else {
 			
 			as.register(user);
-			return ResponseEntity.status(HttpStatus.CREATED).body(user);
+			return ResponseEntity.status(HttpStatus.CREATED).body("1");
 		}
 	}
 	@PostMapping("/login")
