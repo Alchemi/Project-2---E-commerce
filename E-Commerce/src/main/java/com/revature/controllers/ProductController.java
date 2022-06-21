@@ -56,15 +56,13 @@ public class ProductController {
 	@RequestMapping(value="/name")
 	public ResponseEntity<Product> getProductByName(@RequestParam("name") String name){
 		if(name == null) {
-			Product p = null;
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(p);
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
 		}else{
 			if(ps.getProductByName(name) != null) {
 				Product p = ps.getProductByName(name);
 			return ResponseEntity.ok(p);
 			}else {
-				Product p = null;
-				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(p);
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 			}
 		}
 	}

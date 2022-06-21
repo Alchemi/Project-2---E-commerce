@@ -15,11 +15,7 @@ export class CartComponent implements OnInit{
     constructor(private cartService : CartService) { }
         
     ngOnInit(): any {
-        this.cartService.getProduct()
-        .subscribe((res: any)=>{
-            this.product = res;
-            this.grandTotal = this.cartService.getTotalPrice();
-        })
+        
     }
     }
 

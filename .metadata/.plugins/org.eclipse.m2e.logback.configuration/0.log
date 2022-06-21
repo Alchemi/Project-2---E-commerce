@@ -2430,3 +2430,15 @@
 2022-06-18 15:16:21,173 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-06-18 15:16:21,173 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-06-18 15:16:21,179 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-06-18 15:16:21,187 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2022-06-18 15:16:21,191 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-18 15:16:21,191 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-06-18 15:16:21,191 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\tslxg\OneDrive\Desktop\project2\Project-2---E-commerce\E-Commerce\src\test\resources
+2022-06-20 12:08:08,693 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-06-20 20:44:00,503 [Worker-31: Launching E-Commerce - ECommerceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-20 20:44:00,504 [Worker-31: Launching E-Commerce - ECommerceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-06-20 20:44:00,507 [Worker-31: Launching E-Commerce - ECommerceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-06-20 20:44:00,528 [Worker-31: Launching E-Commerce - ECommerceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2022-06-20 20:44:00,533 [Worker-31: Launching E-Commerce - ECommerceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-20 20:44:00,533 [Worker-31: Launching E-Commerce - ECommerceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-06-20 20:44:00,533 [Worker-31: Launching E-Commerce - ECommerceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\tslxg\OneDrive\Desktop\project2\Project-2---E-commerce\E-Commerce\src\test\resources
