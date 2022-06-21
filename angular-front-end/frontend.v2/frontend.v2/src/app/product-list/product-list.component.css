@@ -1,13 +1,15 @@
 .h2{
- align-items: center;
- display: flex;
-
+ padding: 20px;
+ color: #C38D9E;
+ margin: auto;
+ text-align: center;
+ 
 }
 
 .product{
     align-items: center;
-    display: flex;
     padding: 0;
     width: 100%;
     padding-top: .5em;
 }
+
