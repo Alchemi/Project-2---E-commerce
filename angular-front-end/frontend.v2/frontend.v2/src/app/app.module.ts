@@ -14,6 +14,8 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { FooterComponent } from './footer/footer.component';
     ShippingComponent,
     ProductDetailsComponent,
     ProductListComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,8 @@ import { FooterComponent } from './footer/footer.component';
       { path: 'products/:productId', component:
       
     ProductDetailsComponent },
+    { path: 'login', component: LoginComponent},
+    { path: 'register', component: RegisterComponent},
     { path: 'cart', component: CartComponent },
     { path: 'shipping', component: ShippingComponent},
     ])
