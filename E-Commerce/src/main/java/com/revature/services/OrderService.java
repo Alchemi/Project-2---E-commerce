@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.revature.DAO.OrderHistoryDAO;
@@ -14,18 +15,17 @@ import com.revature.models.OrderHistory;
 import com.revature.models.Product;
 import com.revature.models.User;
 @Service
+
 public class OrderService {
 	
 	
 
 	static ArrayList<Product> cartList = new ArrayList<Product>();
 	OrderHistoryDAO ohd= new OrderHistoryDAO();
+	@Autowired
 	private OrderHistory oh;
 
-	@Autowired
-	public OrderService(OrderHistory ohistory) {
-		this.oh = ohistory;
-	}
+	
 	
 	public ArrayList<Product> addToCart(Product p){
 		ProductDAO pd = new ProductDAO();
@@ -65,5 +65,16 @@ public class OrderService {
 	}
 	public List<OrderHistory> getAllOrders(){
 		return ohd.getAllOrders();
+	}
+
+	public void clearCart() {
+		// TODO Auto-generated method stub
+		cartList = null;
+	}
+	public void displaycart() {
+		// TODO Auto-generated method stub
+		for(Product p : cartList) {
+			System.out.println(p.getProductName());
+		}
 	}
 }
