@@ -1,0 +1,15 @@
+.h2{
+ padding: 20px;
+ color: #C38D9E;
+ margin: auto;
+ text-align: center;
+ 
+}
+
+.product{
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    padding-top: .5em;
+}
+

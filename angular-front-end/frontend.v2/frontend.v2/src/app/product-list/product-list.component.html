@@ -1,0 +1,11 @@
+<div class="h2 font-size:40 px;">
+    <h2>Products</h2>
+</div>
+
+<div class= "product " *ngFor="let product of Product">
+        <a [routerLink]="['/products', product.Id]" routerLinkActive="active">
+            <i style="font-size: 30px;font-weight: bold; color:#85dcb8;" class="text-decoration-none">{{ product.name }}
+            </i>
+    </a>
+</div>
+
