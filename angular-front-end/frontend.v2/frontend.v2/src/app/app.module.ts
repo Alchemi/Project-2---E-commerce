@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { FooterComponent } from './footer/footer.component';
+
 
 
 import { AppComponent } from './app.component';
@@ -23,16 +25,9 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     ProductDetailsComponent,
     ProductListComponent,
-    CartComponent,
+    FooterComponent,
     LoginComponent,
-    RegisterComponent,
-    HomeComponent,
-    ShippingComponent,
-    FilterPipe,
-    HeaderComponent,
-    
-
-
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -46,8 +41,8 @@ import { HomeComponent } from './home/home.component';
       { path: 'products/:productId', component:
       
     ProductDetailsComponent },
-    { path: 'login', component:LoginComponent},
-    { path:'register', component:RegisterComponent},
+    { path: 'login', component: LoginComponent},
+    { path: 'register', component: RegisterComponent},
     { path: 'cart', component: CartComponent },
     { path: 'shipping', component: ShippingComponent},
     ])
