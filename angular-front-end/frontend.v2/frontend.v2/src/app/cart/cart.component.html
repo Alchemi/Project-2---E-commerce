@@ -1,4 +1,54 @@
-<h3>Cart</h3>
+<ng-container *ngIf= "true">
+    <div class="card-table">
+        <div class="cart-product">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>SKU</th>
+                        <th>Product Name</th>
+                        <th>Image</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>testing</td>
+                    <td>manga</td>
+                    <td>this what it looks like</td>
+                    <td>i like boks</td>
+                    <td>9.99</td>
+                    <td>777</td>
+                    <td>7762.23</td>
+                    <button class="btn btn-danger">Delete</button>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</ng-container>
+
+
+
+
+
+<ng-container *ngIf= "false">
+<div class="container">
+    <div class="card">
+        <h3 class="card-title">My Cart</h3>
+    </div>
+    <div class="center">
+        <img src="" alt="">
+        <h2>Your Cart is Empty!</h2>
+        <h4>buy something!</h4>
+        <button class="btn btn-primary">Shop Now!</button>
+    </div>
+</div>
+</ng-container>
+
+<!----MIGHT NOT NEED THE THINGS BELOW. I HOPE I KNOW WHAT TO DO WITH IT/FIX IT IF IT NEEDS FIXING----->
 
 <p>
     <a routerLink="/shipping">Shipping Prices</a>
