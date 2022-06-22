@@ -21,8 +21,8 @@ Project Description
 ## Getting Started
 ## Usage
 ## Contributors
-  * Alex
-  * Griffen
-  * Mercedez
-  * Arlontus
-  * Oscar
+  * Alex Gandarilla
+  * Griffen MacLeod
+  * Mercedez Hueyopa
+  * Arlontus Halliburton
+  * Oscar Williams
