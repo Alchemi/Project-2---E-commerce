@@ -21,8 +21,8 @@ Project Description
 ## Getting Started
 ## Usage
 ## Contributors
-  *Alex
-  *Griffen
-  *Mercedez
-  *Arlontus
-  *Oscar
+  * Alex
+  * Griffen
+  * Mercedez
+  * Arlontus
+  * Oscar
