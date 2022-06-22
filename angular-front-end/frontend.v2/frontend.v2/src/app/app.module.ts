@@ -14,6 +14,11 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
+import { RegisterComponent } from './register/register.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 @NgModule({
@@ -25,7 +30,12 @@ import { FooterComponent } from './footer/footer.component';
     ShippingComponent,
     ProductDetailsComponent,
     ProductListComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    ForgotPasswordComponent,
+    OrderHistoryComponent,
+    RegisterComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
