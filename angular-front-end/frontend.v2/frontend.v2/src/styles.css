@@ -2,9 +2,8 @@ body.dark-theme {
     --text-color: #eee;
     --bkg-color: #252222;
     --btn-txt-color: rgb(46, 43, 43);
-    --btn-bg-color: rgba(186, 126, 243, 0.856);
-    --a-color: #eee;
-    --h1-color: #eee;
+    --btn-bg-color: #C38D9E;
+    
   }
   
   body {
