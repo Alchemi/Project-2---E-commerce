@@ -29,3 +29,5 @@ export class CartService {
     }
 
 }
+
+//im testing the page again. i think i fucking broke it 

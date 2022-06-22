@@ -1,11 +1,14 @@
-<div class="h2 font-size:40 px;">
-    <h2>Products</h2>
-</div>
-
-<div class= "product " *ngFor="let product of Product">
-        <a [routerLink]="['/products', product.Id]" routerLinkActive="active">
-            <i style="font-size: 30px;font-weight: bold; color:#85dcb8;" class="text-decoration-none">{{ product.name }}
-            </i>
-    </a>
-</div>
-
+<div class = "card-top container-fluid"></div>
+ <div class="container">
+    <div class="row">
+    <ng-container *ngFor="let item of productList">
+        <div class="card col-md-3">
+           <!-------<img src = "{{item.image}}" alt = "">---> 
+            <h5 style= "white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{ item.productName }}
+            </h5>
+            <p>{{item.description}}</p>
+            <p><strong>Price:</strong>${{item.price}}</p>
+        </div>
+    </ng-container>
+    </div>
+ </div>
