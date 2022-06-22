@@ -1,7 +1,7 @@
 package com.revature.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.ResponseEntity.BodyBuilder;
@@ -18,12 +18,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.revature.models.User;
 import com.revature.services.AuthService;
+import com.revature.services.OrderService;
 @Controller
 @ResponseBody
 @RequestMapping(value="/authcontroller")
 @CrossOrigin
 public class AuthController {
-
+	@Autowired
+	private OrderService os;
 	private AuthService as;
 	public static User u;
 	
@@ -31,6 +33,7 @@ public class AuthController {
 	public AuthController(AuthService service) {
 		this.as = service;
 	}
+	
 	
 	
 	@PostMapping
@@ -60,6 +63,13 @@ public class AuthController {
 			}
 		}
 		
+	}
+	@GetMapping("/logout")
+	public ResponseEntity<String> logout(){
+		os.clearCart();
+		u=null;
+		System.out.println("Logout successful");
+		return ResponseEntity.ok("1");
 	}
 	
 	
