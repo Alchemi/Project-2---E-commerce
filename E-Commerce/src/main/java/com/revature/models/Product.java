@@ -25,6 +25,7 @@ public class Product {
 	String description;
 	@Column(name = "product_type")
 	private producttype producttype;
+	private String image;
 	double price;
 	public int quantity;
 	
@@ -35,15 +36,27 @@ public class Product {
 
 	
 
-	public String getProductName() {
-		return productname;
-	}
-
-	public void setProductName(String productName) {
-		this.productname = productName;
-	}
+	
 
 	
+
+	public Product(int id, String productname, String description, com.revature.models.producttype producttype,
+			String image, double price, int quantity) {
+		super();
+		this.id = id;
+		this.productname = productname;
+		this.description = description;
+		this.producttype = producttype;
+		this.image = image;
+		this.price = price;
+		this.quantity = quantity;
+	}
+
+
+
+
+
+
 
 	public Product(int id, String productName, producttype productType, double price) {
 		super();
@@ -100,6 +113,66 @@ public class Product {
 		return description;
 	}
 
+	
+
+	public String getProductName() {
+		return productname;
+	}
+
+
+
+
+
+
+
+	public void setProductName(String productname) {
+		this.productname = productname;
+	}
+
+
+
+
+
+
+
+	public producttype getProducttype() {
+		return producttype;
+	}
+
+
+
+
+
+
+
+	public void setProducttype(producttype producttype) {
+		this.producttype = producttype;
+	}
+
+
+
+
+
+
+
+	public String getImage() {
+		return image;
+	}
+
+
+
+
+
+
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+
+
+
+
 
 
 	public void setDescription(String description) {
@@ -119,11 +192,13 @@ public class Product {
 		int result = 1;
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + id;
+		result = prime * result + ((image == null) ? 0 : image.hashCode());
 		long temp;
 		temp = Double.doubleToLongBits(price);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((productname == null) ? 0 : productname.hashCode());
 		result = prime * result + ((producttype == null) ? 0 : producttype.hashCode());
+		result = prime * result + quantity;
 		return result;
 	}
 
@@ -143,6 +218,11 @@ public class Product {
 			return false;
 		if (id != other.id)
 			return false;
+		if (image == null) {
+			if (other.image != null)
+				return false;
+		} else if (!image.equals(other.image))
+			return false;
 		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
 			return false;
 		if (productname == null) {
@@ -152,12 +232,14 @@ public class Product {
 			return false;
 		if (producttype != other.producttype)
 			return false;
+		if (quantity != other.quantity)
+			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", productName=" + productname + ", description=" + description + ", productType="
-				+ producttype + ", price=" + price + " quantity=" + quantity + "]";
+		return "Product [id=" + id + ", productname=" + productname + ", description=" + description + ", producttype="
+				+ producttype + ", image=" + image + ", price=" + price + ", quantity=" + quantity + "]";
 	}
 }
