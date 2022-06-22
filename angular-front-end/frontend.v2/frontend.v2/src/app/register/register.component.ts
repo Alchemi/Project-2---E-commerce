@@ -26,9 +26,11 @@ export class RegisterComponent implements OnInit {
   username!:String;
   password!:String;
   Password!:String;
+  email!: String;
   user={
     username:String,
-    password:String
+    password:String,
+    email: String
   };
   response:any;
   msgError="";
@@ -43,7 +45,8 @@ export class RegisterComponent implements OnInit {
     if(this.password == this.Password){
       let user = {
         username: this.username,
-        password: this.password
+        password: this.password,
+        email: this.email
       };
       console.log(this.username);
       console.log(this.password);
