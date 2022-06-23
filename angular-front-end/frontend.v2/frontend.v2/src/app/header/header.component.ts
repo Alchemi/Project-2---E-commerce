@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Product, products } from '../product';
+import { LoginComponent } from '../login/login.component';
+import { RegisterComponent } from '../register/register.component';
+import { Router } from '@angular/router';
 
 
+//SPARKEY YOU IMPORT LOGINCOMPONENT, regiscomponent & router IF STUPID, DELETE.
+//sparkey you added private router : Router, delete if necessarry
+//you ALSO added this.router.navigate... 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,7 +15,10 @@ import { Product, products } from '../product';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { 
+    this.router.navigate(['/login']);
+    this.router.navigate(['/register']);
+  }
 
   ngOnInit(): void {
   }
