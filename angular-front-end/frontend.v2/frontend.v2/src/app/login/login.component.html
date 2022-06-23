@@ -1,41 +1,37 @@
-<div class="row">
-    <div class="col-md-6 offset-md-3 mt-4">
-        <h3>Login</h3>
-        <form >
-            <div class="form-group">
-                <label for="loginUsername">Username</label>
-                <input type="text"
-                       name="username"
-                       
-                       required
-                       
-                       class="form-control"
-                       id="loginUsername"
-                       placeholder="Enter username"
-                       formController="username"
-                       [(ngModel)]="username">
-            </div>
-            <div class="form-group">
-                <label for="loginPassword">Password</label>
-                <input type="password"
-                       name="password"
-                       required
-                       class="form-control"
-                       id="loginPassword"
-                       placeholder="Password"
-                       formController="password"
-                       [(ngModel)]="password">
-            </div>
-            
-            <button (click)=onSubmit() type="submit"
-                    class="btn btn-primary">Login <i class="fas fa-sign-in-alt"></i></button>
-            <small class="text-danger">{{msgError}}</small>
-            <br>
-            <br>
-  
-            <div class="form-group form-check">
-              <a [routerLink]="['/reset-password']">Forgot Password</a>
-          </div>
-          </form>
-    </div>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title> Log in</mat-card-title>
+      </mat-card-header>
+
+      <form class="example-form">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Username"
+            type="text"
+            name ="username"
+            required
+            class="form-control"
+            id="loginUsername"
+            formController="username"
+            [(ngModel)]="username">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Password"
+                    type="password"
+                    name ="password"
+                    required
+                    class="form-control"
+                    id="loginPassword"
+                    formController="password"
+                    [(ngModel)]="password">
+          </mat-form-field>
+        </mat-card-content>
+        <button (click)="onSubmit()" mat-stroked-button color="accent" class="btn-block">Log in</button>
+        <small class="text-danger">{{msgError}}</small>
+    </form>
+    </mat-card>
+
   </div>
