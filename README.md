@@ -20,6 +20,7 @@ Project Description
     * Add products to cart
     * View user profile
     * Checkout
+    * Dark Mode
 ## Getting Started
 ## Usage
 ## Contributors
