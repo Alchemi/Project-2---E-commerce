@@ -7,8 +7,7 @@ import { HeaderComponent } from './header/header.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { AngularMaterialModule } from './angular-material.module';
-
-
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 import { ShippingComponent } from './shipping/shipping.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -43,7 +42,7 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    
+    FlexLayoutModule,
     AngularMaterialModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -59,7 +58,8 @@ import { RegisterComponent } from './register/register.component';
     ])
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
 
