@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
 
     let response = this._http.post<any>("http://localhost:3000/animeSQL/authcontroller/login", 
     User, httpOptions).subscribe({
-      next:(_v:1) => this.router.navigate(['/products']),
+      next:(_v:1) => this.router.navigate(['']),
       error: (_e:0)=> console.error(this.msgError="Invalid Credentials, Please Enter a Valid User Name and/or Password"),
       complete: () => window.localStorage.setItem("username",this.username)
 
