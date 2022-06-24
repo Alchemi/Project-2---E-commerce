@@ -1,52 +1,53 @@
-<div class="row">
-    <div class="col-md-6 offset-md-3 mt-4">
-        <h3>Register New User</h3>
-        <form #f="ngForm">
-            <div class="form-group">
-                <label for="registerUsername">Username</label>
-                <input type="text"
-                       name="username"
-                       id="registerUsername"
-                       
-                       placeholder="Enter username"
-                       formController="username"
-                       [(ngModel)]="username">
-            </div>
-            <div class="form-group">
-                <label for="registerPassword">Password</label>
-                <input type="password"
-                       name="registerPassword"
-                       
-                       
-                       id="registerPassword"
-                       placeholder="Password"
-                       formController="registerPassword"
-                       [(ngModel)]="password">
-            </div>
-            <div class="form-group">
-                <label for="confirm Password">Password</label>
-                <input type="password"
-                       name="confirmPassword"
-                      
-                      
-                       id="confirmPassword"
-                       placeholder="Confirm Password"
-                       formController="confirmPassword"
-                       [(ngModel)]="Password">
-            </div>
-            <div class="form-group">
-                <label for="email">Password</label>
-                <input type="text"
-                       name="confirmPassword"
-                      
-                      
-                       id="email"
-                       placeholder="enter email"
-                       formController="email"
-                       [(ngModel)]="email">
-            </div>
-            <button type="submit" (click)="onSubmit()"
-                    class="btn btn-primary">Register <i class="fas fa-sign-in-alt"></i></button>
-        </form>
-    </div>
-</div>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Register</mat-card-title>
+      </mat-card-header>
+
+      <form class="example-form">
+
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Username"
+                type="text"
+                name="username"
+                id="registerUsername"
+                formController="username"
+                [(ngModel)]="username">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email"
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Enter email"
+            formController="email"
+            [(ngModel)]="email">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="password"
+            type="password"
+            name="registerPassword"
+            id="registerPassword"
+            formController="registerPassword"
+            [(ngModel)]="password">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Password"
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+            [(ngModel)]="Password">
+            
+          </mat-form-field>
+
+        </mat-card-content>
+
+        <button (click)="onSubmit()" mat-stroked-button color="accent" class="btn-block">Register</button>
+
+      </form>
+    </mat-card>
+  </div>

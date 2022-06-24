@@ -18,6 +18,9 @@ Project Description
     * Login and Register
     * View products
     * Add products to cart
+    * View user profile
+    * Checkout
+    * Dark Mode
 ## Getting Started
 ## Usage
 ## Contributors

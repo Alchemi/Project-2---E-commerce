@@ -57,6 +57,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\tslxg\OneDrive\Desktop\Project2\Project-2---E-commerce"/>
 			<item value="C:\Users\tslxg\OneDrive\Desktop\project2\Project-2---E-commerce"/>
 			<item value="C:\Users\tslxg\OneDrive\Desktop\project2"/>
 		</list>

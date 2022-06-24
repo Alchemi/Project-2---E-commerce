@@ -1,4 +1,4 @@
-INDEX VERSION 1.131+C:\Users\tslxg\OneDrive\Desktop\project2\Project-2---E-commerce\.metadata\.plugins\org.eclipse.jdt.core
+INDEX VERSION 1.131+C:\Users\tslxg\OneDrive\Desktop\Project2\Project-2---E-commerce\.metadata\.plugins\org.eclipse.jdt.core
 3564292540.index
 1667688932.index
 1037402458.index
@@ -59,8 +59,8 @@ INDEX VERSION 1.131+C:\Users\tslxg\OneDrive\Desktop\project2\Project-2---E-comme
 3196236145.index
 3986408389.index
 2091149804.index
-1768147413.index
 1747473309.index
+1768147413.index
 1729895904.index
 3208160542.index
 168470000.index
@@ -79,7 +79,6 @@ INDEX VERSION 1.131+C:\Users\tslxg\OneDrive\Desktop\project2\Project-2---E-comme
 1182834627.index
 397227188.index
 2252098502.index
-900667353.index
 2010004955.index
 1893529852.index
 4175783262.index

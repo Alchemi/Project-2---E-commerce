@@ -1,33 +1,42 @@
 <header>
     <div class="navbar sticky-top navbar-light" style="background-color: #557A95 ;">
       <div class="navbar-brand mb-0 h1">
-          <div class="navbar-brand" href="#">
-              
+          <div class="navbar-brand" href="#">            
               <a routerLink= "/" class="button-fancy">
                 <i><img src = "assets/img/lotus.png" width="50" hieght= "50" class= "d-inline-block align-bottom" alt="~Lotus~">
-                <strong style= "font-size: 40px; color:#E8A87C ">AnimeSQL </strong></i>
-                
+                <strong style= "font-size: 40px; color:#E8A87C ">AnimeSQL </strong></i>              
               </a>
           </div>
               <div class="nav">
-                
                 <div class ="nav-items">
                   <form class="search">
                       <input type="text" class="search-box" placeholder="What do you figure?">
                       <button class ="search-btn">Search</button>
                   </form>   
-                  </div>
-                  <div class ="dark-mode">
-            <button (click)="toggleDarkTheme()">
-              <i class="dark-icon"></i><img src="assets/img/half-moon.png" alt="~Moon~">
-            </button>
-          </div>
-            <a routerLink="/cart" class="button">
-            <i class="material-icons"><img src ="assets/img/popcorn-cart.png" alt="~POP">
-            </i>
-          </a>
-              </div>       
+                </div>
+                <div class ="dark-mode">
+                  <button (click)="toggleDarkTheme()">
+                    <i class="dark-icon"></i><img src="assets/img/half-moon.png" alt="~Moon~">
+                  </button>
+                </div>
+                <div>
+                  <a routerLink="/cart" class="button">
+                    <i class="material-icons"><img src ="assets/img/popcorn-cart.png" alt="~POP">
+                    </i>
+                  </a>
+                </div>
+                <div>
+                  <button>
+                    <a routerLink= '/login'>login</a>
+                  </button>
+                </div>
+                <div>
+                  <button>
+                   <a routerLink= '/register'>register</a></button>
+                </div>      
+              </div>
       </div>
+
      </div>
        <!---it works i just need to add fancy buttons---->
         <div style="text-align:right">
@@ -41,3 +50,7 @@
             </span>
       </div>     
   </header>
+=======
+    </div>    
+</header>
+

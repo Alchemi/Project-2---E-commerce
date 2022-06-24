@@ -1,9 +1,13 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
 import { HeaderComponent } from './header/header.component';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { AngularMaterialModule } from './angular-material.module';
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 import { ShippingComponent } from './shipping/shipping.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -29,13 +33,18 @@ import { RegisterComponent } from './register/register.component';
     ProductListComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    FlexLayoutModule,
+    AngularMaterialModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
@@ -49,7 +58,8 @@ import { RegisterComponent } from './register/register.component';
     ])
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
 
