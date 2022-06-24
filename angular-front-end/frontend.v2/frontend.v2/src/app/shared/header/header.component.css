@@ -16,19 +16,31 @@
  z-index: 9;
 }
 
+.navbar{
+    padding: 10px 10px;
+}
+
 .nav{
     padding: 10px 10vw;
-    position: relative; left: 750px;
     float: right;
+    width: 100%;
 }
 
 .navbar-brand{
     text-decoration: none;
 }
 
+.nav-tool-items{
+    padding: 0px 10px;
+}
+
 .brand-logo{
     align-items: center;
     display: flex;
+}
+
+.logo{
+    padding: 5px 5px;
 }
 
 .search{
@@ -53,7 +65,7 @@
 .search-btn{
     width: 20%;
     height: 22px;
-    padding: 1px 8px;
+    padding: 1px 5px;
     border: none;
     outline: none;
     cursor: pointer;
@@ -104,16 +116,17 @@ nav.items a img{
 }
 
 .dark-icon{
-    position:fixed right; 
+     
     display: flex;
     float: right;
+    background-color: none;
 }
 
 .material-icons{
-    position:fixed right; 
+     
     display: flex;
-    height: 40px;
-    float: right;
+    height: 30px;
+    padding: 0px 5px;
 }
 
 .button{
@@ -124,4 +137,13 @@ display: flex;
     display: flex;
     position: relative;
     height: 0px;
+    padding: 0px;
+}
+
+.login{
+    padding: 0px 5px;
+}
+
+.register{
+    padding: 0px 5px;
 }

@@ -1,0 +1,14 @@
+.banner{
+    background-image: url('../../../assets/img/asuke-evangelion.jpg');
+    height: 600px;
+    width: 1190px; /*PLACEHOLDER UNTIL HEADER COMPONENT IS FIXED, AFTERWARD REMOVE WIDTH ASPECT */
+    background-position: center top;
+    background-size: cover;
+
+}
+
+.banner h1{
+    color: #E8A87C;
+    font-size: 30px;
+    font-weight:bold ;
+}

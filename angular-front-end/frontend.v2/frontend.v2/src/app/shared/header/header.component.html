@@ -3,21 +3,16 @@
       <div class="navbar-brand mb-0 h1">
           <div class="navbar-brand" href="#">            
               <a routerLink= "/" class="button-fancy">
-                <i><img src = "assets/img/lotus.png" width="50" hieght= "50" class= "d-inline-block align-bottom" alt="~Lotus~">
+                <i><img src = "assets/img/lotus.png" width="50" hieght= "50" class= "logo d-inline-block align-bottom" alt="~Lotus~">
                 <strong style= "font-size: 40px; color:#E8A87C ">AnimeSQL </strong></i>              
               </a>
           </div>
-              <div class="nav">
-                <div class ="nav-items">
+              <div class="nav alg">
+                <div class ="nav-items ns-auto">
                   <form class="search">
                       <input type="text" class="search-box" placeholder="What do you figure?">
                       <button class ="search-btn">Search</button>
                   </form>   
-                </div>
-                <div class ="dark-mode">
-                  <button (click)="toggleDarkTheme()">
-                    <i class="dark-icon"></i><img src="assets/img/half-moon.png" alt="~Moon~">
-                  </button>
                 </div>
                 <div>
                   <a routerLink="/cart" class="button">
@@ -26,14 +21,18 @@
                   </a>
                 </div>
                 <div>
-                  <button>
-                    <a routerLink= '/login'>login</a>
+                  
+                  <span class="nav-tool-items">
+                    <a mat-button routerLink="login" routerLinkActive="active">Log in</a>
+                    <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Register</a>
+                  </span>
+                
+                </div>  
+                <div class ="dark-mode">
+                  <button (click)="toggleDarkTheme()">
+                    <i class="dark-icon"></i><img src="assets/img/half-moon.png" alt="~Moon~">
                   </button>
-                </div>
-                <div>
-                  <button>
-                   <a routerLink= '/register'>register</a></button>
-                </div>      
+                </div>   
               </div>
       </div>
     </div>    
