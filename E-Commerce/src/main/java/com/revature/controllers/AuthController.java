@@ -71,6 +71,15 @@ public class AuthController {
 		System.out.println("Logout successful");
 		return ResponseEntity.ok("1");
 	}
+	@GetMapping("/user")
+	public ResponseEntity<User> getUser(){
+		if (u!=null) {
+			return ResponseEntity.ok(u);
+		}
+		else {
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+		}
+	}
 	
 	
 }
