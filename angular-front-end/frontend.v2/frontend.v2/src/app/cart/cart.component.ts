@@ -1,6 +1,6 @@
-import { Component } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
-import { CartService } from "../cart.service";
+import { Component, OnInit } from "@angular/core";
+import { CartService } from "../service/cart.service";
+
 
 
 @Component({
@@ -8,26 +8,25 @@ import { CartService } from "../cart.service";
     templateUrl: './cart.component.html',
     styleUrls: ['./cart.component.css']
 })
-export class CartComponent {
+export class CartComponent implements OnInit {
+public products : any = [];
+public grandTotal !: number;
 
-    items = this.cartService.getItems();
+constructor(private cartService : CartService) {}
 
-    checkoutForm = this.formBuilder.group({
-        name: '',
-        address: ''
-    });
-
-    constructor(
-        private cartService: CartService,
-        private formBuilder: FormBuilder,
-    ) { }
-
-    onSubmit(): void {
-        //process checkout data
-        this.items=this.cartService.clearCart();
-        console.warn('Your order has been submitted', this.checkoutForm.value);
-        this.checkoutForm.reset();
+    ngOnInit(): void{
+        this.cartService.getProducts()
+        .subscribe(res=>{
+            this.products = res;
+            this.grandTotal = this.cartService.getTotalPrice();
+        })
+    }     
+    removeItem(item: any){
+        this.cartService.removeCartItem(item);
         
     }
-
+    emptycart(){
+        this.cartService.removeAllCart();
+    }
+    
 }
