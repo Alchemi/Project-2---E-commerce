@@ -113,7 +113,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body.dark-theme {
   --text-color: #252222;
-  --bkg-color: #252222;
+  --bkg-color: #b62d82;
   --btn-txt-color: rgb(46, 43, 43);
   --btn-bg-color: #C38D9E;
 
