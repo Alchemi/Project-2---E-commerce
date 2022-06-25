@@ -4,13 +4,15 @@
     top: 100%;
     background-color: #557A95;
     padding: 20px 10px;
+    margin: 0px;
 }
 
 h1{
     color: #E8A87C;
     font-size: 40px;
-    font-weight: bold;
-    font-style: italic;
+
+    font-style:italic;
+    
 }
 
 a{

@@ -1,13 +1,17 @@
 html,
 body {
   height: 100%;
+ 
 }
+
+
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   min-height: 100vh;
   background: #e2e2e2;
+  background-size: cover;
 }
 
 .app-header {
@@ -112,8 +116,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body.dark-theme {
-  --text-color: #252222;
-  --bkg-color: #b62d82;
+  --text-color: #f0eaea;
+  --bkg-color:  #292e2c;
   --btn-txt-color: rgb(46, 43, 43);
   --btn-bg-color: #C38D9E;
 

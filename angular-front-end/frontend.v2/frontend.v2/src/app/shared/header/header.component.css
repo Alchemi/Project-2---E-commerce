@@ -16,23 +16,23 @@
  z-index: 9;
 }
 
-.navbar{
-    padding: 10px 10px;
-}
 
 .nav{
-    padding: 10px 10vw;
+    align-items: center;
+    padding: 10px 0vw;
     float: right;
     width: 100%;
 }
 
 .navbar-brand{
     text-decoration: none;
+
 }
 
 .nav-tool-items{
     padding: 0px 10px;
 }
+
 
 .brand-logo{
     align-items: center;
@@ -84,7 +84,6 @@
 }
 
 nav.items a{
-    margin-left: 20 px;
     justify-content: space-between;
 }
 
