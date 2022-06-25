@@ -64,7 +64,7 @@
     <a routerLink="/shipping">Shipping Prices</a>
 </p>
 
-<form [formBuilder] ="checkoutForm" (ngSubmit)="onSubmit()">
+<form [formGroup]= "checkoutForm" (ngSubmit)="onSubmit()">
     <div>
         <label for="name">
             Name
@@ -81,7 +81,7 @@
         <label for="email">
             email
         </label>
-        <input id="address" type="text" formControlName="email">
+        <input id="email" type="text" formControlName="email">
     </div>
     
     <button class ="button" type="submit">purchase</button>
