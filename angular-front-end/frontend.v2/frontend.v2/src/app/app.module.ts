@@ -54,9 +54,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     AppRoutingModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
-      { path: 'products/:productId', component:
-      
-    ProductDetailsComponent },
+      { path: 'products/:productId', component: ProductDetailsComponent },
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'cart', component: CartComponent },

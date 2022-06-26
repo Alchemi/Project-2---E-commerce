@@ -1,3 +1,7 @@
+//DO NOT USE DO NOT USE DO NOT USE
+//this is COMPLETE buttcheeks.
+
+
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { Product } from './product';
@@ -31,3 +35,4 @@ export class CartService {
 }
 
 //im testing the page again. i think i fucking broke it 
+//// this is  BUTTCHEEKS. MIGHT DELETE.....NO I WILL DELETE I JUST NEED TO TALK TO FRIENDS TO MAKE SURE OK

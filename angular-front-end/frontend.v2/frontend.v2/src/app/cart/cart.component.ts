@@ -1,33 +1,45 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { CartService } from "../service/cart.service";
 import { FormBuilder } from "@angular/forms";
-import { CartService } from "../cart.service";
-
 
 @Component({
     selector: 'app-cart',
     templateUrl: './cart.component.html',
     styleUrls: ['./cart.component.css']
 })
-export class CartComponent {
+export class CartComponent implements OnInit {
+public products : any = [];
+public grandTotal !: number;
 
-    items = this.cartService.getItems();
+//this might be stupid delete comma in component and lines15-17 and 21  if needed
+checkoutForm = this.formBuilder.group({
+    name: "",
+    address: ""
+})
 
-    checkoutForm = this.formBuilder.group({
-        name: '',
-        address: ''
-    });
+constructor(private cartService : CartService,
+    private formBuilder: FormBuilder
+    ) {}
 
-    constructor(
-        private cartService: CartService,
-        private formBuilder: FormBuilder,
-    ) { }
-
-    onSubmit(): void {
-        //process checkout data
-        this.items=this.cartService.clearCart();
-        console.warn('Your order has been submitted', this.checkoutForm.value);
-        this.checkoutForm.reset();
+    ngOnInit(): void{
+        this.cartService.getProducts()
+        .subscribe(res=>{
+            this.products = res;
+            this.grandTotal = this.cartService.getTotalPrice();
+        })
+    }     
+    removeItem(item: any){
+        this.cartService.removeCartItem(item);
         
     }
+    emptycart(){
+        this.cartService.removeAllCart();
+    }
+//this also might be stupid 39-44
+onSubmit(): void{
+    this.products = this.cartService.removeAllCart();
+    console.warn('your order has been submitted', this.checkoutForm.value);
+    this.checkoutForm.reset();
 
+}
 }
