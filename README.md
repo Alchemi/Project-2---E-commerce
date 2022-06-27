@@ -3,7 +3,7 @@ PROJECT NAME
   # Anime SQL
   # E-Commerce Website
 Project Description
-  ##
+   Anime SQL is an e-commerce app that sells figurines for different anime and manga pop culture brands
 ## Technologies Used
   * Spring MVC
   * Java VERSION 8
