@@ -52,6 +52,7 @@ import { ProfileComponent } from './profile/profile.component';
       { path: 'products/:productId', component: ProductDetailsComponent },
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
+    { path:'profile', component:ProfileComponent},
     { path: 'cart', component: CartComponent },
     { path: 'shipping', component: ShippingComponent},
     ])

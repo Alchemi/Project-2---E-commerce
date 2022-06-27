@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from '../service/userprofile.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  public user : any;
+  constructor(private profile:ProfileService) { }
 
   ngOnInit(): void {
+    this.profile.getUserProfile()
+    .subscribe(res=>{
+        this.user = res;
+
+        this.user.forEach((a:any) => {
+            Object.assign(a,{address:"somewhere"});
+            
+        });
+    }) 
   }
 
 }
