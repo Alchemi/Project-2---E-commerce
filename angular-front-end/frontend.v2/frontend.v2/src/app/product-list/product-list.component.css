@@ -1,11 +1,3 @@
-.h2{
- padding: 20px;
- color: #C38D9E;
- margin: auto;
- text-align: center;
- 
-}
-
 .product{
     align-items: center;
     padding: 0;
@@ -13,3 +5,28 @@
     padding-top: .5em;
 }
 
+.row{
+    display: flex;
+    justify-content:space-between;
+    top: 15%;
+    position: absolute;
+}
+
+
+
+.productbox{
+    padding: 10px 5px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.card{
+    opacity: 0.9;
+}
+
+
+button{
+    position: absolute; bottom: 1%; right: 1%;
+}

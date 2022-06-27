@@ -14,6 +14,18 @@ body {
   background-size: cover;
 }
 
+.card{
+  background-color: #e2e2e2;
+}
+
+.button,.btn-primary{
+  background-color: #557A95;
+  border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
 .app-header {
   justify-content: space-between;
   position: fixed;
@@ -116,14 +128,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body.dark-theme {
-  --text-color: #f0eaea;
+  --text-color:  #E8A87C;
   --bkg-color:  #292e2c;
-  --btn-txt-color: rgb(46, 43, 43);
-  --btn-bg-color: #C38D9E;
-
+  --btn-txt-color: rgb(224, 221, 221);
+  --btn-bg-color: #557A95;
 }
 
-body {
+body, .productbox {
   background: var(--bkg-color);
 }
 
@@ -137,4 +148,13 @@ border: none;
 border-radius: 2px;
 color: var(--btn-txt-color);
 background-color: var(--btn-bg-color);
+border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+
+*{
+  color: var(--text-color);
 }

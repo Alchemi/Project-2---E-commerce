@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterComponent } from '../../../../../frontend/src/app/register/register.component';
-import { LoginComponent } from '../../../../../frontend/src/app/login/login.component';
+import { RegisterComponent} from '../register/register.component'
+import { LoginComponent } from '../login/login.component';
 
 const httpOptions   = {
   headers: new HttpHeaders({

@@ -61,6 +61,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     { path: 'shipping', component: ShippingComponent},
     ])
   ],
+  exports: [ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]

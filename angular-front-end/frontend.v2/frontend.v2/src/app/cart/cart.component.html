@@ -54,7 +54,7 @@
     <div class="center">
         <img src="" alt="">
         <h2>Your Cart is Empty!</h2>
-        <h4>buy something!</h4>
+        <h4>Buy Something!</h4>
         <button routerLink="/" class="btn btn-primary">Shop Now!</button>
     </div>
 </div>
@@ -62,12 +62,27 @@
 
 <!----MIGHT NOT NEED THE THINGS BELOW. I HOPE I KNOW WHAT TO DO WITH IT/FIX IT IF IT NEEDS FIXING----->
 
-<p>
-    <a routerLink="/shipping">Shipping Prices</a>
-</p>
 
-<form [formBuilder] ="checkoutForm" (ngSubmit)="onSubmit()">
-    <div>
+
+<form [formGroup] ="checkoutForm" (ngSubmit)="onSubmit()">
+    <div class="inner-form ms-auto">
+       
+       <form>
+        <input type="text" placeholder="Enter Your Full Name" />
+        <input type="text" placeholder="Enter your Address" />
+        <input type="text" placeholder="Enter your Email" />
+        
+
+
+       </form>
+       
+       
+       
+        <!-- <p>
+            <a routerLink="/shipping" class="shipping">Shipping Prices</a>
+        </p>    
+        <div>
+        
         <label for="name">
             Name
         </label>
@@ -81,12 +96,14 @@
     </div>
     <div>
         <label for="email">
-            email
+            Email
         </label>
         <input id="address" type="text" formControlName="email">
     </div>
     
-    <button class ="button" type="submit">purchase</button>
+    <!-- <button class ="button" type="submit">Purchase</button> -->
+    <button (click)="purchase()" class="button">Purchase</button> -->
+    </div>
 </form>
 
 
