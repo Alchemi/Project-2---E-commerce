@@ -6,10 +6,7 @@ import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
-  {
-    path:'users/:id',
-    component: ProfileComponent
-  }
+  
 
 ];
 
